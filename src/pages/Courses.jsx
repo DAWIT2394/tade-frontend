@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Courses = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [selectedDuration, setSelectedDuration] = useState('all');
 
   // Course data based on durations
