@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "build": "DISABLE_ESLINT_PLUGIN=true npm run lint --max-warnings=999 && next build",
+"build": "react-scripts build",
     "lint": "eslint . --ext .js,.jsx",
     "eject": "react-scripts eject"
   },
