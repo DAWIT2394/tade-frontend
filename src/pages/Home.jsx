@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import CourseCard from '../components/CourseCard';
 import { getCourses } from '../services/api';
+import heroImage from '../assets/her.jpg';
+
 
 const Home = () => {
   const [courses, setCourses] = useState([]);
@@ -456,16 +458,20 @@ const Home = () => {
       {/* Hero Section */}
       <div style={styles.heroContainer}>
         {/* Optimized responsive image */}
-        <img 
-          src="/images/her.JPG" 
-          alt="Nexus Modeling School Hero" 
-          style={styles.heroImage}
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.style.display = 'none';
-            e.target.parentElement.style.background = "linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('/images/her.JPG') center/cover";
-          }}
-        />
+       <img
+  src={heroImage}
+  alt="Nexus Modeling School Hero"
+  style={styles.heroImage}
+  onError={(e) => {
+    e.target.onerror = null;
+    e.target.style.display = "none";
+    e.target.parentElement.style.background = `linear-gradient(
+      135deg,
+      rgba(0,0,0,0.7),
+      rgba(0,0,0,0.5)
+    ), url(${heroImage}) center/cover`;
+  }}
+/>
         <div style={styles.heroOverlay}></div>
         <div style={styles.heroContent}>
           <div style={styles.logoBadge}>
