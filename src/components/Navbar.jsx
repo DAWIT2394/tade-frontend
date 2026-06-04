@@ -19,7 +19,6 @@ const Navbar = () => {
   // Styles
   const styles = {
     navbar: {
-      background: 'white',
       boxShadow: '0 2px 20px rgba(0,0,0,0.08)',
       position: 'sticky',
       top: 0,
