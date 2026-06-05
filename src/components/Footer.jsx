@@ -62,7 +62,7 @@ const Footer = () => {
       </p>
 
       <p style={{ marginBottom: "10px" }}>
-        📞 +251 94 084 8080 | ✉️ info@nexusmodeling.com
+        📞 +251 92 257 2652 | ✉️ info@nexusmodeling.com
       </p>
 
       {/* Social Media Links */}

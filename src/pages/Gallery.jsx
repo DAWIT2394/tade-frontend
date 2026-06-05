@@ -433,7 +433,7 @@ const Gallery = () => {
         borderRadius: '16px',
       }}>
         <p style={{ color: '#6b7280', fontSize: '14px' }}>
-          📸 Follow us on social media for more updates | 📞 <strong style={{ color: '#ec4899' }}>+251 940 848 080</strong>
+          📸 Follow us on social media for more updates | 📞 <strong style={{ color: '#ec4899' }}>+25192 257 2652</strong>
         </p>
       </div>
 

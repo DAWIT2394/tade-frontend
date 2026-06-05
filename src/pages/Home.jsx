@@ -513,7 +513,7 @@ const Home = () => {
           
           <div style={styles.contactBar}>
             <div style={styles.contactBadge}>
-              📞 +251 940 848 080
+              📞 +25192 257 2652
             </div>
           </div>
         </div>
@@ -668,7 +668,7 @@ const Home = () => {
               Contact Us 📞
             </a>
           </div>
-          <p style={styles.ctaPhone}>📞 Call us: +251 940 848 080</p>
+          <p style={styles.ctaPhone}>📞 Call us: +25192 257 2652</p>
         </div>
       </div>
     </>

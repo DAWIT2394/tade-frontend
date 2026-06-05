@@ -216,7 +216,7 @@ const RegistrationForm = () => {
     background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)',
     borderRadius: '16px',
     padding: '15px 20px',
-    marginBottom: '25px',
+    marginBottom: '15px',
     border: '1px solid #7dd3fc',
     boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
   };
@@ -258,6 +258,98 @@ const RegistrationForm = () => {
     color: '#ec4899',
     fontFamily: 'monospace',
     letterSpacing: '1px',
+  };
+
+  // Outfit Requirements Card Style
+  const outfitCardStyle = {
+    background: 'linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%)',
+    borderRadius: '16px',
+    padding: '20px',
+    marginBottom: '25px',
+    border: '1px solid #d8b4fe',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+  };
+
+  const outfitTitleStyle = {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: '#6b21a5',
+    textAlign: 'center',
+    marginBottom: '16px',
+    letterSpacing: '0.5px',
+  };
+
+  const outfitGridStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gap: '20px',
+  };
+
+  const outfitItemStyle = {
+  background: 'white',
+  borderRadius: '16px',
+  padding: '16px',
+  textAlign: 'center',
+  boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+};
+
+  const outfitGenderStyle = {
+    fontSize: '20px',
+    fontWeight: 'bold',
+    color: '#ec4899',
+    marginBottom: '12px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '8px',
+  };
+
+  const outfitListStyle = {
+    textAlign: 'left',
+    marginTop: '12px',
+    paddingLeft: '20px',
+  };
+
+  const outfitItem = {
+    fontSize: '14px',
+    color: '#374151',
+    marginBottom: '8px',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+  };
+
+  const shoeImagesStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '30px',
+    marginTop: '20px',
+    flexWrap: 'wrap',
+  };
+
+  const shoeCardStyle = {
+    textAlign: 'center',
+    padding: '12px',
+    background: 'white',
+    borderRadius: '12px',
+    width: '150px',
+  };
+
+  const shoeEmojiStyle = {
+    fontSize: '48px',
+    marginBottom: '8px',
+  };
+
+  const shoeLabelStyle = {
+    fontSize: '12px',
+    fontWeight: '600',
+    color: '#4c1d95',
+    marginTop: '5px',
+  };
+
+  const shoeDescStyle = {
+    fontSize: '11px',
+    color: '#6b7280',
   };
 
   const handleSubmit = async (e) => {
@@ -471,6 +563,72 @@ const RegistrationForm = () => {
         </div>
         <div style={{ textAlign: 'center', fontSize: '11px', color: '#6b21a5', marginTop: '8px' }}>
           ⏰ Tuesday 9-11 AM | Thursday 9-11 AM | Saturday 4-6 PM
+        </div>
+      </div>
+
+      {/* Outfit Requirements Section */}
+      <div style={outfitCardStyle}>
+        <div style={outfitTitleStyle}>
+          👔 ለሞዴሊንግ ክላስ የሚያስፈልግ አለባበስ (Outfit Requirements for Modeling Class)
+        </div>
+        <div style={outfitGridStyle}>
+          {/* Male Model */}
+          <div style={outfitItemStyle}>
+            <div style={outfitGenderStyle}>
+              <span>👨</span> Male Model
+            </div>
+            <ul style={outfitListStyle}>
+              <li style={outfitItem}>
+                <span>👕</span> Fitted Outfit
+              </li>
+              <li style={outfitItem}>
+                <span>👞</span> Leather Shoes
+              </li>
+            </ul>
+          </div>
+
+          {/* Female Model */}
+          <div style={outfitItemStyle}>
+            <div style={outfitGenderStyle}>
+              <span>👩</span> Female Model
+            </div>
+            <ul style={outfitListStyle}>
+              <li style={outfitItem}>
+                <span>👖</span> Tight Pants / Fitted Pants
+              </li>
+              <li style={outfitItem}>
+                <span>👠</span> Heel Shoes (Black or Nude Color)
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Shoe Images Section */}
+        <div style={shoeImagesStyle}>
+          {/* Male Leather Shoes */}
+          <div style={shoeCardStyle}>
+            <div style={shoeEmojiStyle}>👞✨</div>
+            <div style={shoeLabelStyle}>Men's Leather Shoes</div>
+            <div style={shoeDescStyle}>Black/Brown Leather</div>
+          </div>
+
+          {/* Female Black Heels */}
+          <div style={shoeCardStyle}>
+            <div style={shoeEmojiStyle}>👠🖤</div>
+            <div style={shoeLabelStyle}>Black Heel Shoes</div>
+            <div style={shoeDescStyle}>Classic Black Pumps</div>
+          </div>
+
+          {/* Female Nude Heels */}
+          <div style={shoeCardStyle}>
+            <div style={shoeEmojiStyle}>👠🤎</div>
+            <div style={shoeLabelStyle}>Nude Heel Shoes</div>
+            <div style={shoeDescStyle}>Nude Color Pumps</div>
+          </div>
+        </div>
+
+        <div style={{ textAlign: 'center', fontSize: '11px', color: '#6b21a5', marginTop: '12px' }}>
+          ⚡ እባክዎ ለክላስ ሲመጡ በተገቢ አለባበስ ይገኙ | Please come with proper outfit for class
         </div>
       </div>
 
@@ -761,7 +919,7 @@ const RegistrationForm = () => {
         paddingTop: '20px'
       }}>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-          <span>📞 +251 940 848 080</span>
+          <span>📞 +25192 257 2652</span>
           <span>📸 Profile Photo Required</span>
           <span>🎓 Limited Seats Available</span>
         </div>

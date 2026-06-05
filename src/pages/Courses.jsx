@@ -532,24 +532,7 @@ const Courses = () => {
             </div>
 
             {/* Info Grid */}
-            <div style={styles.infoGrid}>
-              <div style={styles.infoItem}>
-                <div style={styles.infoLabel}>Schedule</div>
-                <div style={styles.infoValue}>{course.schedule}</div>
-              </div>
-              <div style={styles.infoItem}>
-                <div style={styles.infoLabel}>Experience Level</div>
-                <div style={styles.infoValue}>{course.level}</div>
-              </div>
-              <div style={styles.infoItem}>
-                <div style={styles.infoLabel}>Certificate</div>
-                <div style={styles.infoValue}>✓ Included</div>
-              </div>
-              <div style={styles.infoItem}>
-                <div style={styles.infoLabel}>Portfolio</div>
-                <div style={styles.infoValue}>✓ Professional</div>
-              </div>
-            </div>
+          
 
             {/* Enroll Button */}
             <div style={styles.buttonSection}>
@@ -648,7 +631,7 @@ const Courses = () => {
         borderRadius: '16px',
       }}>
         <p style={{ color: '#6b7280', fontSize: '14px' }}>
-          📞 For questions about our specializations, call us: <strong style={{ color: '#ec4899' }}>+251 940 848 080</strong>
+          📞 For questions about our specializations, call us: <strong style={{ color: '#ec4899' }}>+25192 257 2652</strong>
         </p>
         <p style={{ color: '#9ca3af', fontSize: '12px', marginTop: '8px' }}>
           Flexible payment plans available | Scholarships for exceptional talent | Free career consultation
