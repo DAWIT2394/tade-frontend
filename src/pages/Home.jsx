@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import CourseCard from '../components/CourseCard';
 import { getCourses } from '../services/api';
-import heroImage from '../assets/her.jpg';
+import heroImage from '../assets/herr.JPG';
 
 
 const Home = () => {

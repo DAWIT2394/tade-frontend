@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const About = () => {
   const styles = {
     container: {
@@ -8,6 +7,67 @@ const About = () => {
       margin: '0 auto',
       padding: '60px 24px',
       animation: 'fadeIn 0.6s ease-out',
+    },
+    welcomeBanner: {
+      background: 'linear-gradient(135deg, #ec4899, #9333ea, #6366f1)',
+      borderRadius: '24px',
+      padding: '30px',
+      marginBottom: '40px',
+      color: 'white',
+      textAlign: 'center',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+    },
+    welcomeTitle: {
+      fontSize: 'clamp(28px, 6vw, 42px)',
+      fontWeight: 'bold',
+      marginBottom: '15px',
+    },
+    welcomeText: {
+      fontSize: 'clamp(14px, 3vw, 16px)',
+      lineHeight: '1.6',
+      marginBottom: '20px',
+      opacity: 0.95,
+    },
+    ownerBadge: {
+      display: 'inline-block',
+      background: 'rgba(255,255,255,0.2)',
+      padding: '8px 20px',
+      borderRadius: '40px',
+      fontSize: '14px',
+      fontWeight: '600',
+      marginTop: '10px',
+    },
+    infoGrid: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+      gap: '20px',
+      marginTop: '20px',
+    },
+    infoCard: {
+      background: 'rgba(255,255,255,0.15)',
+      borderRadius: '16px',
+      padding: '15px',
+      backdropFilter: 'blur(10px)',
+    },
+    socialLinks: {
+      display: 'flex',
+      justifyContent: 'center',
+      gap: '15px',
+      flexWrap: 'wrap',
+      marginTop: '20px',
+    },
+    socialLink: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '8px',
+      background: 'rgba(255,255,255,0.2)',
+      padding: '8px 16px',
+      borderRadius: '40px',
+      color: 'white',
+      textDecoration: 'none',
+      fontSize: '14px',
+      fontWeight: '500',
+      transition: 'all 0.3s ease',
     },
     heroSection: {
       textAlign: 'center',
@@ -62,6 +122,41 @@ const About = () => {
     missionText: {
       color: '#6b7280',
       lineHeight: '1.6',
+    },
+    servicesSection: {
+      marginBottom: '60px',
+      padding: '40px',
+      background: '#f8fafc',
+      borderRadius: '30px',
+    },
+    servicesTitle: {
+      fontSize: 'clamp(28px, 5vw, 36px)',
+      fontWeight: 'bold',
+      textAlign: 'center',
+      marginBottom: '30px',
+      color: '#1f2937',
+    },
+    servicesGrid: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+      gap: '20px',
+    },
+    serviceCard: {
+      textAlign: 'center',
+      padding: '20px',
+      background: 'white',
+      borderRadius: '16px',
+      transition: 'all 0.3s ease',
+      cursor: 'pointer',
+    },
+    serviceIcon: {
+      fontSize: '36px',
+      marginBottom: '10px',
+    },
+    serviceTitle: {
+      fontSize: '16px',
+      fontWeight: 'bold',
+      color: '#1f2937',
     },
     storySection: {
       display: 'grid',
@@ -264,6 +359,23 @@ const About = () => {
   const [hoveredTeam, setHoveredTeam] = useState(null);
   const [hoveredValue, setHoveredValue] = useState(null);
   const [hoveredStat, setHoveredStat] = useState(null);
+  const [hoveredService, setHoveredService] = useState(null);
+  const [hoveredSocial, setHoveredSocial] = useState(null);
+
+  const socialMedia = [
+    { name: 'Instagram', handle: '@Nexus_Modeling_management', url: 'https://www.instagram.com/official_tade_12', icon: '📷' },
+    { name: 'TikTok', handle: '@Nexus_Modeling_management', url: 'https://www.tiktok.com/@nexusmodelingethiopia', icon: '🎵' },
+    { name: 'Facebook', handle: 'Nexus_Modeling_management', url: 'https://www.facebook.com/share/p/1CVDiqPCVW/', icon: '📘' },
+    { name: 'YouTube', handle: 'Nexus_Modeling_management', url: 'https://youtube.com/@nexus_modeling', icon: '📺' },
+  ];
+
+  const services = [
+    { icon: '📚', title: 'Modeling Course' },
+    { icon: '🎬', title: 'Casting' },
+    { icon: '🎉', title: 'Event' },
+    { icon: '🎨', title: 'Art Management' },
+    { icon: '🎥', title: 'Production' },
+  ];
 
   return (
     <div style={styles.container}>
@@ -323,6 +435,74 @@ const About = () => {
         `}
       </style>
 
+      {/* Welcome Banner - New Section */}
+      <div style={styles.welcomeBanner}>
+        <h1 style={styles.welcomeTitle}>✨ Welcome to Nexus Modeling School & Management ✨</h1>
+        <p style={styles.welcomeText}>
+          This is a Modeling School & Modeling Agency Based in Ethiopia. 
+          We specialize in professional modeling training, talent casting, event management, 
+          art management, and production services.
+        </p>
+        <div style={styles.ownerBadge}>
+          👑 Owner: Professional Model <strong>Tade</strong> 👑
+        </div>
+        
+        <div style={styles.infoGrid}>
+          <div style={styles.infoCard}>
+            📍 <strong>Location</strong><br />
+            Ayat, Addis Ababa, Ethiopia
+          </div>
+          <div style={styles.infoCard}>
+            ✉️ <strong>Email</strong><br />
+            tademan562@gmail.com
+          </div>
+        </div>
+
+        {/* Social Media Links */}
+        <div style={styles.socialLinks}>
+          {socialMedia.map((social, index) => (
+            <a
+              key={index}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                ...styles.socialLink,
+                transform: hoveredSocial === index ? 'translateY(-3px) scale(1.05)' : 'translateY(0) scale(1)',
+                background: hoveredSocial === index ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.2)',
+              }}
+              onMouseEnter={() => setHoveredSocial(index)}
+              onMouseLeave={() => setHoveredSocial(null)}
+            >
+              <span>{social.icon}</span>
+              <span>{social.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Services Section */}
+      <div style={styles.servicesSection}>
+        <h2 style={styles.servicesTitle}>Our Services</h2>
+        <div style={styles.servicesGrid}>
+          {services.map((service, index) => (
+            <div
+              key={index}
+              style={{
+                ...styles.serviceCard,
+                transform: hoveredService === index ? 'translateY(-5px)' : 'translateY(0)',
+                boxShadow: hoveredService === index ? '0 10px 25px rgba(0,0,0,0.1)' : 'none',
+              }}
+              onMouseEnter={() => setHoveredService(index)}
+              onMouseLeave={() => setHoveredService(null)}
+            >
+              <div style={styles.serviceIcon}>{service.icon}</div>
+              <div style={styles.serviceTitle}>{service.title}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Hero Section */}
       <div style={styles.heroSection}>
         <div style={styles.logoIcon}>👣</div>
@@ -361,7 +541,7 @@ const About = () => {
         <div className="story-content" style={styles.storyContent}>
           <h2 style={styles.storyTitle}>Our Story</h2>
           <p style={styles.storyText}>
-            Founded in 2018, Nexus Modeling School & Management started with a simple yet powerful vision - 
+            Founded in 2018 by Professional Model Tade, Nexus Modeling School & Management started with a simple yet powerful vision - 
             to transform Ethiopia's modeling industry and create world-class talent that can compete globally.
           </p>
           <p style={styles.storyText}>
@@ -442,10 +622,10 @@ const About = () => {
         <h2 style={styles.teamTitle}>Meet Our Expert Team</h2>
         <div style={styles.teamGrid}>
           {[
-            { name: 'Selam Tesfaye', role: 'Founder & Head Trainer', icon: '👩‍🎨', desc: '10+ years in international modeling industry' },
+            { name: 'Tade', role: 'Founder & Professional Model', icon: '👑', desc: 'Professional Model & Industry Expert' },
+            { name: 'Selam Tesfaye', role: 'Head Trainer', icon: '👩‍🎨', desc: '10+ years in international modeling industry' },
             { name: 'Dawit Mekonnen', role: 'Runway Coach', icon: '👔', desc: 'Former international runway model' },
-            { name: 'Meron Assefa', role: 'Personality Development', icon: '💫', desc: 'Psychology & communication expert' },
-            { name: 'Henok Girma', role: 'Fitness Trainer', icon: '💪', desc: 'Certified fitness & wellness coach' }
+            { name: 'Meron Assefa', role: 'Personality Development', icon: '💫', desc: 'Psychology & communication expert' }
           ].map((member, index) => (
             <div 
               key={index}
@@ -491,7 +671,10 @@ const About = () => {
         <p style={styles.contactText}>📞 For inquiries and admissions</p>
         <p style={styles.contactNumber}>+251 940 848 080</p>
         <p style={{ ...styles.contactText, marginTop: '10px', fontSize: '14px' }}>
-          📍 Addis Ababa, Ethiopia | ✉️ info@nexusmodelingschool.com
+          📍 Ayat, Addis Ababa, Ethiopia | ✉️ tademan562@gmail.com
+        </p>
+        <p style={{ marginTop: '10px', fontSize: '12px', color: '#6b7280' }}>
+          📷 Instagram: @Nexus_Modeling_management | 🎵 TikTok: @Nexus_Modeling_management
         </p>
       </div>
     </div>

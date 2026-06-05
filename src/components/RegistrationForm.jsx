@@ -107,6 +107,159 @@ const RegistrationForm = () => {
     marginBottom: '0',
   };
 
+  const scheduleCardStyle = {
+    background: 'linear-gradient(135deg, #fef2f8 0%, #f3e8ff 100%)',
+    borderRadius: '16px',
+    padding: '15px 20px',
+    marginBottom: '15px',
+    border: '1px solid #f0d9ff',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+  };
+
+  const scheduleTitleStyle = {
+    fontSize: '14px',
+    fontWeight: 'bold',
+    color: '#7e22ce',
+    textAlign: 'center',
+    marginBottom: '10px',
+    letterSpacing: '0.5px',
+  };
+
+  const scheduleGridStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '20px',
+    flexWrap: 'wrap',
+  };
+
+  const scheduleItemStyle = {
+    background: 'white',
+    padding: '8px 16px',
+    borderRadius: '40px',
+    fontSize: '13px',
+    fontWeight: '600',
+    color: '#4c1d95',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '8px',
+  };
+
+  const pricingCardStyle = {
+    background: 'linear-gradient(135deg, #fefce8 0%, #fef3c7 100%)',
+    borderRadius: '16px',
+    padding: '15px 20px',
+    marginBottom: '15px',
+    border: '1px solid #fde68a',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+  };
+
+  const pricingTitleStyle = {
+    fontSize: '14px',
+    fontWeight: 'bold',
+    color: '#b45309',
+    textAlign: 'center',
+    marginBottom: '12px',
+    letterSpacing: '0.5px',
+  };
+
+  const pricingGridStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '12px',
+    marginBottom: '10px',
+  };
+
+  const pricingItemStyle = {
+    background: 'white',
+    padding: '10px',
+    borderRadius: '12px',
+    textAlign: 'center',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+  };
+
+  const pricingDurationStyle = {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: '#1f2937',
+  };
+
+  const pricingFeeStyle = {
+    fontSize: '20px',
+    fontWeight: 'bold',
+    color: '#ec4899',
+    marginTop: '4px',
+  };
+
+  const registrationFeeStyle = {
+    textAlign: 'center',
+    marginTop: '8px',
+    padding: '8px',
+    background: '#fef2f2',
+    borderRadius: '40px',
+    fontSize: '13px',
+    fontWeight: 'bold',
+    color: '#dc2626',
+  };
+
+  const cocBadgeStyle = {
+    display: 'inline-block',
+    background: '#10b981',
+    color: 'white',
+    fontSize: '11px',
+    padding: '3px 8px',
+    borderRadius: '20px',
+    marginLeft: '8px',
+  };
+
+  const paymentCardStyle = {
+    background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)',
+    borderRadius: '16px',
+    padding: '15px 20px',
+    marginBottom: '25px',
+    border: '1px solid #7dd3fc',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+  };
+
+  const paymentTitleStyle = {
+    fontSize: '14px',
+    fontWeight: 'bold',
+    color: '#0369a1',
+    textAlign: 'center',
+    marginBottom: '12px',
+    letterSpacing: '0.5px',
+  };
+
+  const paymentGridStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gap: '12px',
+    marginBottom: '10px',
+  };
+
+  const paymentItemStyle = {
+    background: 'white',
+    padding: '12px',
+    borderRadius: '12px',
+    textAlign: 'center',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+  };
+
+  const paymentMethodStyle = {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: '#1f2937',
+    marginBottom: '8px',
+  };
+
+  const paymentNumberStyle = {
+    fontSize: '18px',
+    fontWeight: 'bold',
+    color: '#ec4899',
+    fontFamily: 'monospace',
+    letterSpacing: '1px',
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -277,7 +430,7 @@ const RegistrationForm = () => {
         `}
       </style>
       
-      <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '20px' }}>
         <span style={{ fontSize: '48px' }}>👣</span>
         <h2
           style={{
@@ -287,14 +440,95 @@ const RegistrationForm = () => {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginTop: '10px',
-            marginBottom: '10px',
+            marginBottom: '5px',
           }}
         >
           Join Nexus Modeling School
         </h2>
-        <p style={{ color: '#6b7280', fontSize: '14px' }}>
+        <p style={{ color: '#6b7280', fontSize: '14px', marginBottom: '5px' }}>
           Start your journey to become a professional model
         </p>
+        <p style={{ color: '#4b5563', fontSize: '12px', fontWeight: '500' }}>
+          Nexus 👣 Modeling School & Management
+        </p>
+      </div>
+
+      {/* Schedule Section */}
+      <div style={scheduleCardStyle}>
+        <div style={scheduleTitleStyle}>
+          📅 የሞዴሊንግ ስልጠና ቀን እና ሰዓት (Training Schedule)
+        </div>
+        <div style={scheduleGridStyle}>
+          <div style={scheduleItemStyle}>
+            <span>📆 ማክሰኞ</span> <span>9-11 ሰዓት</span>
+          </div>
+          <div style={scheduleItemStyle}>
+            <span>📆 ሀሙስ</span> <span>9-11 ሰዓት</span>
+          </div>
+          <div style={scheduleItemStyle}>
+            <span>📆 ቅዳሜ</span> <span>4-6 ሰዓት</span>
+          </div>
+        </div>
+        <div style={{ textAlign: 'center', fontSize: '11px', color: '#6b21a5', marginTop: '8px' }}>
+          ⏰ Tuesday 9-11 AM | Thursday 9-11 AM | Saturday 4-6 PM
+        </div>
+      </div>
+
+      {/* Pricing Section */}
+      <div style={pricingCardStyle}>
+        <div style={pricingTitleStyle}>
+          💰 የሞዴሊንግ ኮርስ የጊዜ ቆይታ ከክፍያ ጋር (Course Duration & Fees)
+        </div>
+        <div style={pricingGridStyle}>
+          <div style={pricingItemStyle}>
+            <div style={pricingDurationStyle}>📘 3 ወር ኮርስ</div>
+            <div style={pricingFeeStyle}>3,000 ብር</div>
+            <div style={{ fontSize: '11px', color: '#6b7280' }}>ወርሃዊ ክፍያ</div>
+          </div>
+          <div style={pricingItemStyle}>
+            <div style={pricingDurationStyle}>📗 6 ወር ኮርስ</div>
+            <div style={pricingFeeStyle}>2,500 ብር</div>
+            <div style={{ fontSize: '11px', color: '#6b7280' }}>ወርሃዊ ክፍያ</div>
+          </div>
+          <div style={pricingItemStyle}>
+            <div style={pricingDurationStyle}>📕 10 ወር ኮርስ</div>
+            <div style={pricingFeeStyle}>2,500 ብር</div>
+            <div style={{ fontSize: '11px', color: '#6b7280' }}>ወርሃዊ ክፍያ</div>
+          </div>
+        </div>
+        <div style={registrationFeeStyle}>
+          📝 የምዝገባ ክፍያ (Registration Fee): <strong>500 ብር</strong>
+          <span style={cocBadgeStyle}>✓ COC አለው</span>
+        </div>
+        <div style={{ textAlign: 'center', fontSize: '10px', color: '#92400e', marginTop: '8px' }}>
+          * ክፍያ በወርሃዊ ክፍያ መልክ ይከፈላል | Monthly payment plan available
+        </div>
+      </div>
+
+      {/* Payment Information Section */}
+      <div style={paymentCardStyle}>
+        <div style={paymentTitleStyle}>
+          💳 የክፍያ መረጃ (Payment Information)
+        </div>
+        <div style={paymentGridStyle}>
+          <div style={paymentItemStyle}>
+            <div style={paymentMethodStyle}>🏦 Commercial Bank of Ethiopia (CBE)</div>
+            <div style={paymentNumberStyle}>1000391318585</div>
+            <div style={{ fontSize: '11px', color: '#6b7280', marginTop: '5px' }}>
+              Account Name: Nexus Modeling School
+            </div>
+          </div>
+          <div style={paymentItemStyle}>
+            <div style={paymentMethodStyle}>📱 Telebirr</div>
+            <div style={paymentNumberStyle}>0922572652</div>
+            <div style={{ fontSize: '11px', color: '#6b7280', marginTop: '5px' }}>
+              Merchant Name: Nexus Modeling School
+            </div>
+          </div>
+        </div>
+        <div style={{ textAlign: 'center', fontSize: '11px', color: '#0369a1', marginTop: '8px' }}>
+          ⚡ ክፍያ ሲፈጽሙ ስምዎን በማመልከት ደረሰኙን በአመልካች ቅጽ ላይ ያስረክቡ | Please attach payment receipt after transfer
+        </div>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -456,9 +690,9 @@ const RegistrationForm = () => {
           style={inputStyle}
         >
           <option value="">Select Course Duration ⏰</option>
-          <option value="3 Months">📘 3 Months Course - Basic Modeling</option>
-          <option value="6 Months">📗 6 Months Course - Professional Track</option>
-          <option value="10 Months">📕 10 Months Course - Master Program</option>
+          <option value="3 Months">📘 3 Months Course - 3,000 ብር/ወር</option>
+          <option value="6 Months">📗 6 Months Course - 2,500 ብር/ወር</option>
+          <option value="10 Months">📕 10 Months Course - 2,500 ብር/ወር</option>
         </select>
 
         {/* Profile Image */}
