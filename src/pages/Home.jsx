@@ -1,51 +1,61 @@
-import { useEffect, useState } from 'react';
-import CourseCard from '../components/CourseCard';
-import { getCourses } from '../services/api';
+import { useState, useRef, useEffect } from 'react';
 import heroImage from '../assets/herr.JPG';
-
+import promoVideo from '../assets/kk.mp4'; // Add your promo video file
 
 const Home = () => {
-  const [courses, setCourses] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [stats, setStats] = useState({
+ 
+  const [videoError, setVideoError] = useState(false);
+  const [videoLoading, setVideoLoading] = useState(true);
+  const videoRef = useRef(null);
+  const [stats] = useState({
     students: 0,
     graduates: 0,
     experts: 0,
     workshops: 0
   });
 
-  useEffect(() => {
-    // Fetch courses
-    getCourses()
-      .then((res) => setCourses(res.data))
-      .catch(() => console.error("Failed to load courses"))
-      .finally(() => setLoading(false));
+  // Hover effects - MOVED UP before they're used
+  const [hoveredStat, setHoveredStat] = useState(null);
+  const [hoveredWhy, setHoveredWhy] = useState(null);
+  const [showVideo, setShowVideo] = useState(false);
 
-    // Animate stats counter
-    const targets = {
-      students: 1250,
-      graduates: 890,
-      experts: 24,
-      workshops: 156
-    };
-    
-    const duration = 2000;
-    const stepTime = 20;
-    
-    Object.keys(targets).forEach(key => {
-      let current = 0;
-      const increment = targets[key] / (duration / stepTime);
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= targets[key]) {
-          setStats(prev => ({ ...prev, [key]: targets[key] }));
-          clearInterval(timer);
-        } else {
-          setStats(prev => ({ ...prev, [key]: Math.floor(current) }));
+  // MOVED the useEffect AFTER showVideo is defined
+  useEffect(() => {
+    if (showVideo && videoRef.current && !videoError) {
+      // Force video to play and ensure it's visible
+      const playVideo = async () => {
+        try {
+          await videoRef.current.play();
+        } catch (err) {
+          console.error("Playback failed:", err);
         }
-      }, stepTime);
-    });
-  }, []);
+      };
+      playVideo();
+    }
+  }, [showVideo, videoError]);
+
+  const handleVideoError = (e) => {
+    setVideoError(true);
+    setVideoLoading(false);
+    console.error("Video failed to load. Check file path and format.", e);
+  };
+
+  const handleVideoLoad = () => {
+    setVideoLoading(false);
+    console.log("Video loaded successfully");
+  };
+
+  const handlePlayClick = () => {
+    setShowVideo(true);
+    // Small delay to ensure video element is mounted
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.play().catch(e => {
+          console.error("Autoplay failed:", e);
+        });
+      }
+    }, 100);
+  };
 
   // Styles
   const styles = {
@@ -230,12 +240,12 @@ const Home = () => {
       fontSize: '14px',
     },
     
-    // Courses Section
-    coursesSection: {
+    // Video Section
+    videoSection: {
       padding: '80px 0',
-      background: '#f9fafb',
+      background: '#0f0f0f',
     },
-    coursesContainer: {
+    videoContainer: {
       maxWidth: '1200px',
       margin: '0 auto',
       padding: '0 24px',
@@ -255,7 +265,7 @@ const Home = () => {
     },
     sectionSubtitle: {
       fontSize: '20px',
-      color: '#6b7280',
+      color: '#9ca3af',
       maxWidth: '576px',
       marginLeft: 'auto',
       marginRight: 'auto',
@@ -267,55 +277,67 @@ const Home = () => {
       margin: '16px auto 0',
       borderRadius: '9999px',
     },
-    loadingSpinner: {
+    videoWrapper: {
+      position: 'relative',
+      borderRadius: '24px',
+      overflow: 'hidden',
+      boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+      marginBottom: '32px',
+      backgroundColor: '#1a1a1a',
+      minHeight: '400px',
       display: 'flex',
-      justifyContent: 'center',
       alignItems: 'center',
-      padding: '80px 0',
+      justifyContent: 'center',
     },
-    spinner: {
-      width: '64px',
-      height: '64px',
-      border: '4px solid #e5e7eb',
-      borderTop: '4px solid #9333ea',
-      borderRadius: '50%',
-      animation: 'spin 1s linear infinite',
+    videoElement: {
+      width: '100%',
+      height: 'auto',
+      display: 'block',
+      borderRadius: '24px',
+      cursor: 'pointer',
     },
-    coursesGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-      gap: '32px',
-    },
-    emptyState: {
+    videoPlaceholder: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'linear-gradient(135deg, #1a1a1a, #2d2d2d)',
+      color: 'white',
       textAlign: 'center',
-      padding: '80px 0',
+      padding: '20px',
     },
-    emptyEmoji: {
-      fontSize: '64px',
+    playButton: {
+      width: '80px',
+      height: '80px',
+      background: 'linear-gradient(135deg, #ec4899, #9333ea)',
+      borderRadius: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '32px',
+      cursor: 'pointer',
+      transition: 'transform 0.3s ease',
       marginBottom: '16px',
     },
-    emptyTitle: {
-      fontSize: '24px',
-      fontWeight: '600',
-      marginBottom: '8px',
-      color: '#374151',
-    },
-    emptyText: {
-      color: '#6b7280',
-    },
-    viewAllButton: {
+    videoCaption: {
       textAlign: 'center',
-      marginTop: '48px',
+      color: '#9ca3af',
+      fontSize: '14px',
+      marginTop: '16px',
     },
-    viewAllLink: {
-      display: 'inline-block',
-      background: 'linear-gradient(135deg, #ec4899, #9333ea)',
-      color: 'white',
-      padding: '12px 32px',
-      borderRadius: '12px',
-      fontWeight: '600',
-      textDecoration: 'none',
-      transition: 'all 0.3s ease',
+    loadingSpinner: {
+      width: '40px',
+      height: '40px',
+      border: '4px solid rgba(255, 255, 255, 0.3)',
+      borderTop: '4px solid white',
+      borderRadius: '50%',
+      animation: 'spin 1s linear infinite',
+      margin: '0 auto 16px',
     },
     
     // Why Choose Us Section
@@ -420,10 +442,6 @@ const Home = () => {
     },
   };
 
-  // Hover effects (using state for simplicity)
-  const [hoveredStat, setHoveredStat] = useState(null);
-  const [hoveredWhy, setHoveredWhy] = useState(null);
-
   return (
     <>
       <style>
@@ -452,26 +470,32 @@ const Home = () => {
           body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
           }
+          video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+          }
         `}
       </style>
 
       {/* Hero Section */}
       <div style={styles.heroContainer}>
-        {/* Optimized responsive image */}
-       <img
-  src={heroImage}
-  alt="Nexus Modeling School Hero"
-  style={styles.heroImage}
-  onError={(e) => {
-    e.target.onerror = null;
-    e.target.style.display = "none";
-    e.target.parentElement.style.background = `linear-gradient(
-      135deg,
-      rgba(0,0,0,0.7),
-      rgba(0,0,0,0.5)
-    ), url(${heroImage}) center/cover`;
-  }}
-/>
+        <img
+          src={heroImage}
+          alt="Nexus Modeling School Hero"
+          style={styles.heroImage}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.style.display = "none";
+            if (e.target.parentElement) {
+              e.target.parentElement.style.background = `linear-gradient(
+                135deg,
+                rgba(0,0,0,0.7),
+                rgba(0,0,0,0.5)
+              ), url(${heroImage}) center/cover`;
+            }
+          }}
+        />
         <div style={styles.heroOverlay}></div>
         <div style={styles.heroContent}>
           <div style={styles.logoBadge}>
@@ -513,7 +537,7 @@ const Home = () => {
           
           <div style={styles.contactBar}>
             <div style={styles.contactBadge}>
-              📞 +25192 257 2652
+              📞 +251940848080
             </div>
           </div>
         </div>
@@ -552,50 +576,87 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Featured Courses Section */}
-      <div style={styles.coursesSection}>
-        <div style={styles.coursesContainer}>
+      {/* Video Section - Fixed with better video handling and loop */}
+      <div style={styles.videoSection}>
+        <div style={styles.videoContainer}>
           <div style={styles.sectionHeader}>
-            <h2 style={styles.sectionTitle}>Our Signature Programs</h2>
+            <h2 style={styles.sectionTitle}>Watch Our Journey</h2>
             <p style={styles.sectionSubtitle}>
-              Professional training designed to launch your modeling career
+              See what makes Nexus the premier modeling school in Ethiopia
             </p>
             <div style={styles.titleUnderline}></div>
           </div>
           
-          {loading ? (
-            <div style={styles.loadingSpinner}>
-              <div style={styles.spinner}></div>
-            </div>
-          ) : (
-            <>
-              <div style={styles.coursesGrid}>
-                {courses.slice(0, 6).map(course => (
-                  <CourseCard key={course._id} course={course} />
-                ))}
-              </div>
-              
-              {courses.length === 0 && (
-                <div style={styles.emptyState}>
-                  <div style={styles.emptyEmoji}>🎯</div>
-                  <h3 style={styles.emptyTitle}>Programs Coming Soon</h3>
-                  <p style={styles.emptyText}>Stay tuned for our exciting course lineup!</p>
+          <div style={styles.videoWrapper}>
+            {!showVideo && !videoError ? (
+              <div style={styles.videoPlaceholder}>
+                <div 
+                  style={styles.playButton}
+                  onClick={handlePlayClick}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+                  ▶️
                 </div>
-              )}
-            </>
-          )}
+                <p style={{ marginTop: '16px', fontSize: '18px', fontWeight: 'bold' }}>Click to Play Video</p>
+                <p style={{ fontSize: '14px', opacity: 0.7, marginTop: '8px' }}>Watch our modeling journey</p>
+              </div>
+            ) : videoError ? (
+              <div style={styles.videoPlaceholder}>
+                <div style={{ fontSize: '48px', marginBottom: '16px' }}>🎬</div>
+                <p style={{ fontSize: '18px', fontWeight: 'bold' }}>Video Unavailable</p>
+                <p style={{ fontSize: '14px', opacity: 0.7, marginTop: '8px' }}>
+                  Please check back later or visit our YouTube channel
+                </p>
+                <a 
+                  href="https://youtube.com/@nexus_modeling" 
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    marginTop: '20px',
+                    padding: '10px 24px',
+                    background: 'linear-gradient(135deg, #ec4899, #9333ea)',
+                    borderRadius: '40px',
+                    color: 'white',
+                    textDecoration: 'none',
+                    display: 'inline-block'
+                  }}>
+                  Visit YouTube Channel
+                </a>
+              </div>
+            ) : (
+              <>
+                {videoLoading && (
+                  <div style={styles.videoPlaceholder}>
+                    <div style={styles.loadingSpinner}></div>
+                    <p>Loading video...</p>
+                  </div>
+                )}
+                <video 
+                  ref={videoRef}
+                  controls 
+                  loop
+                  style={{
+                    ...styles.videoElement,
+                    display: videoLoading ? 'none' : 'block'
+                  }}
+                  poster={heroImage}
+                  onError={handleVideoError}
+                  onLoadedData={handleVideoLoad}
+                  onCanPlay={() => setVideoLoading(false)}
+                  playsInline
+                  preload="auto"
+                >
+                  <source src={promoVideo} type="video/mp4" />
+                  <source src={promoVideo} type="video/quicktime" />
+                  Your browser does not support the video tag.
+                </video>
+              </>
+            )}
+          </div>
           
-          {!loading && courses.length > 0 && (
-            <div style={styles.viewAllButton}>
-              <a 
-                href="/courses" 
-                style={styles.viewAllLink}
-                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
-                View All Programs →
-              </a>
-            </div>
-          )}
+          <div style={styles.videoCaption}>
+            🎬 Experience the transformation - From aspiring models to runway stars
+          </div>
         </div>
       </div>
 
@@ -615,9 +676,9 @@ const Home = () => {
           
           <div style={styles.whyGrid}>
             {[
-              { icon: '👑', title: 'Industry Experts', text: 'Learn from top models and industry professionals' },
-              { icon: '🎯', title: 'Practical Training', text: 'Real runway experience and portfolio development' },
-              { icon: '🌍', title: 'Global Opportunities', text: 'International connections and placement assistance' }
+              { icon: '👑', title: 'Industry Experts', text: 'Learn from top models and industry professionals with years of experience' },
+              { icon: '🎯', title: 'Practical Training', text: 'Real runway experience, professional photoshoots, and portfolio development' },
+              { icon: '🌍', title: 'Global Opportunities', text: 'International connections, casting calls, and placement assistance worldwide' }
             ].map((item, index) => (
               <div 
                 key={index}
@@ -668,11 +729,11 @@ const Home = () => {
               Contact Us 📞
             </a>
           </div>
-          <p style={styles.ctaPhone}>📞 Call us: +25192 257 2652</p>
+          <p style={styles.ctaPhone}>📞 Call us: +251940848080</p>
         </div>
       </div>
     </>
   );
 };
 
-export default Home; 
+export default Home;

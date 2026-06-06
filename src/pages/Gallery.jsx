@@ -1,8 +1,7 @@
-import { useEffect, useState, useCallback } from 'react';
-import { getGallery } from '../services/api';
+import {  useState } from 'react';
 
 // Import images from local folder
-import g1 from '../assets/g1.jpg';
+import g111 from '../assets/g111.JPG';
 import g2 from '../assets/g2.JPG';
 import g3 from '../assets/g3.JPG';
 import g4 from '../assets/g4.JPG';
@@ -17,7 +16,7 @@ import g12 from '../assets/g12.JPG';
 
 // Local gallery data with imported images - defined outside component
 const SAMPLE_GALLERY = [
-  { id: 1, image: g1, title: 'Runway Training Session', category: 'training' },
+  { id: 1, image: g111, title: 'Runway Training Session', category: 'training' },
   { id: 2, image: g2, title: 'Fashion Show 2023', category: 'event' },
   { id: 3, image: g3, title: 'Graduation Ceremony', category: 'graduation' },
   { id: 4, image: g4, title: 'Professional Photo Shoot', category: 'photoshoot' },
@@ -32,31 +31,11 @@ const SAMPLE_GALLERY = [
 ];
 
 const Gallery = () => {
-  const [gallery, setGallery] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [gallery] = useState(SAMPLE_GALLERY);
   const [filter, setFilter] = useState('all');
+  const [selectedImage, setSelectedImage] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
-
-  const loadGallery = useCallback(async () => {
-    try {
-      const res = await getGallery();
-      if (res.data && res.data.length > 0) {
-        setGallery(res.data);
-      } else {
-        setGallery(SAMPLE_GALLERY);
-      }
-    } catch (err) {
-      console.error('Error loading gallery:', err);
-      setGallery(SAMPLE_GALLERY);
-    } finally {
-      setLoading(false);
-    }
-  }, []); // No dependencies needed since SAMPLE_GALLERY is defined outside component
-
-  useEffect(() => {
-    loadGallery();
-  }, [loadGallery]);
+  const [loading] = useState(false);                      
 
   const displayGallery = gallery;
 
@@ -486,7 +465,7 @@ const Gallery = () => {
         borderRadius: '16px',
       }}>
         <p style={{ color: '#6b7280', fontSize: '14px' }}>
-          📸 Follow us on social media for more updates | 📞 <strong style={{ color: '#ec4899' }}>+25192 257 2652</strong>
+          📸 Follow us on social media for more updates | 📞 <strong style={{ color: '#ec4899' }}>+251940848080</strong>
         </p>
       </div>
 

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import heroImage from '../assets/about.JPG';
 import tadeImage from '../assets/herr.JPG';
-import selamImage from '../assets/hibist.JPG';
-
+import hibistImage from '../assets/hibist.JPG';
 
 const About = () => {
   const styles = {
@@ -229,7 +228,7 @@ const About = () => {
     },
     teamGrid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
       gap: '30px',
     },
     teamCard: {
@@ -257,9 +256,6 @@ const About = () => {
       height: '100%',
       objectFit: 'cover',
     },
-    teamIcon: {
-      fontSize: '64px',
-    },
     teamName: {
       fontSize: '20px',
       fontWeight: 'bold',
@@ -272,10 +268,51 @@ const About = () => {
       fontWeight: '600',
       marginBottom: '10px',
     },
-    teamDesc: {
-      fontSize: '14px',
+    experienceBadge: {
+      display: 'inline-block',
+      background: 'linear-gradient(135deg, #f59e0b, #ec4899)',
+      color: 'white',
+      padding: '4px 12px',
+      borderRadius: '20px',
+      fontSize: '11px',
+      fontWeight: 'bold',
+      marginBottom: '12px',
+    },
+    profileSection: {
+      textAlign: 'left',
+      marginTop: '15px',
+      paddingTop: '15px',
+      borderTop: '1px solid #f3f4f6',
+      maxHeight: '450px',
+      overflowY: 'auto',
+    },
+    profileTitle: {
+      fontSize: '13px',
+      fontWeight: 'bold',
+      color: '#ec4899',
+      marginBottom: '8px',
+      marginTop: '12px',
+    },
+    profileText: {
+      fontSize: '12px',
       color: '#6b7280',
       lineHeight: '1.5',
+      marginBottom: '6px',
+    },
+    skillsList: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '6px',
+      marginTop: '8px',
+      marginBottom: '8px',
+    },
+    skillTag: {
+      background: '#f3e8ff',
+      color: '#9333ea',
+      padding: '4px 10px',
+      borderRadius: '20px',
+      fontSize: '10px',
+      fontWeight: '600',
     },
     valuesSection: {
       marginBottom: '60px',
@@ -375,10 +412,10 @@ const About = () => {
   const [hoveredSocial, setHoveredSocial] = useState(null);
 
   const socialMedia = [
-    { name: 'Instagram', handle: '@Nexus_Modeling_management', url: 'https://www.instagram.com/official_tade_12', icon: '📷' },
-    { name: 'TikTok', handle: '@Nexus_Modeling_management', url: 'https://www.tiktok.com/@nexusmodelingethiopia', icon: '🎵' },
-    { name: 'Facebook', handle: 'Nexus_Modeling_management', url: 'https://www.facebook.com/share/p/1CVDiqPCVW/', icon: '📘' },
-    { name: 'YouTube', handle: 'Nexus_Modeling_management', url: 'https://youtube.com/@nexus_modeling', icon: '📺' },
+    { name: 'Instagram', handle: '@Official_Tade_12', url: 'https://www.instagram.com/official_tade_12', icon: '📷' },
+    { name: 'TikTok', handle: '@Official_Model_12', url: 'https://www.tiktok.com/@official_model_12', icon: '🎵' },
+    { name: 'Facebook', handle: 'Official_Tadele Balcha', url: 'https://www.facebook.com/share/p/1CVDiqPCVW/', icon: '📘' },
+    { name: 'YouTube', handle: '@nexus_modeling', url: 'https://youtube.com/@nexus_modeling', icon: '📺' },
   ];
 
   const services = [
@@ -389,27 +426,72 @@ const About = () => {
     { icon: '🎥', title: 'Production' },
   ];
 
-  // Team members with imported images
+  // Team members with experience years
   const teamMembers = [
     { 
-      name: ' Coach Tade', 
-      role: 'Founder & Professional Model', 
+      name: 'TADELE BALCHA WOLDE', 
+      role: 'Model | Founder & CEO | Pageant Judge', 
       photo: tadeImage,
-      icon: '👑', 
-      desc: 'Professional Model with 8+ years of international experience. Specializes in high fashion and commercial modeling.',
-      specialties: ['Runway', 'Editorial', 'Brand Endorsements']
+      icon: '👑',
+      experience: '6+ Years',
+      profile: {
+        intro: 'Professional fashion model based in Ethiopia with 6+ years of experience in runway shows, fashion weeks, commercial campaigns, billboard advertisements, music videos, films, and brand collaborations. Ethiopian Next Top Model 2024 First Runner Up Winner. Founder & CEO of Nexus Modeling School & Management.',
+        experience: [
+          'Ethiopian Next Top Model 2024 - First Runner Up Winner',
+          'The 9th Oda Awards Best Outfit Winner 2025',
+          'Modeling Coach at New Hub Modeling & Nexus Modeling School & Management - Stage Fashion Show specialist',
+          '15+ Music Video Main Cast - Featured as lead cast member',
+          'Cinema, Films & Short Movies - Portrayed diverse characters',
+          'Billboard Photo Shoot Advertising - Safaricom, CBE campaigns',
+          'Bedele Beer Advertising - Multiple media channels',
+          'TV Advertising - Banking, soaps, spas, and various industries'
+        ],
+        pageantJudgment: [
+          'Miss Tourism Oromia 2025',
+          'Miss Irrecha 2025',
+          'Miss Bishofitu 2025'
+        ],
+        campaigns: [
+          'Safaricom Video & Billboard Campaign',
+          'CBE Billboard Advertising',
+          'Belayab Motor Car TV AD',
+          'Kuku Sebsibe Dejazimach Clip',
+          'Alphamale Men\'s Clothing - Brand Ambassador (6 Months)'
+        ],
+        entrepreneurship: 'Founder & CEO of Nexus Modeling School & Management - Established and manages Ethiopia\'s premier modeling institution focused on professional modeling training, talent casting, event management, art management, and production services.',
+        skills: ['Runway Modeling', 'Commercial Modeling', 'Editorial Modeling', 'Brand Ambassador', 'Acting', 'Pageant Judge', 'Fashion Campaigns', 'Creative Collaboration', 'Social Media Promotion', 'Modeling Coach'],
+        location: 'Addis Ababa, Ayat Area, Ethiopia',
+        personalInfo: {
+          // 'Date of Birth': 'June 19, 2000',
+          // 'Height': '187 cm',
+          // 'Age': '26',
+          // 'Nationality': 'Ethiopia 🇪🇹'
+        }
+      }
     },
     { 
-      name: 'Coach Hibist', 
-      role: 'Head Trainer & Runway Coach', 
-      photo: selamImage,
-      icon: '👩‍🎨', 
-      desc: 'Former international runway model with 10+ years of experience. Trained over 300 successful models.',
-      specialties: ['Catwalk', 'Posture', 'Stage Presence']
+      name: 'HIBIST DERSO', 
+      role: 'Model | Creative Entrepreneur', 
+      photo: hibistImage,
+      icon: '👩‍🎨',
+      experience: '3+ Years',
+      profile: {
+        intro: 'Professional fashion model based in Ethiopia with 3+ years of experience in runway shows, fashion weeks, commercial campaigns, billboard advertisements, and brand collaborations. Passionate about fashion, creativity, and storytelling through visual media. Founder of the jewelry brand Netela.',
+        experience: [
+          'African sourcing Fashion Week (AFSW) - Walked for leading designers and brands',
+          'Hub of Africa Fashion Week (HAFW) - Participated in one of Africa\'s most recognized fashion platforms',
+          'GTCO Fashion Week - Selected for international fashion week experience in Nigeria',
+          'GTCO Fashion Weekend - Featured as a model at one of Africa\'s largest fashion events'
+        ],
+        campaigns: [
+          'Ethio Telecom - Featured in billboard advertising campaigns',
+          'Dorga Hair Oil - Modeled for commercial and promotional photoshoots'
+        ],
+        entrepreneurship: 'Founder & Owner of Netela Jewelry - Established and manages a jewelry brand focused on unique and stylish accessories. Involved in brand development, creative direction, product promotion, and marketing.',
+        skills: ['Runway Modeling', 'Commercial Modeling', 'Editorial Modeling', 'Brand Representation', 'Fashion Campaigns', 'Creative Collaboration', 'Social Media Promotion'],
+        location: 'Addis Ababa, Ethiopia'
+      }
     },
- 
-  
- 
   ];
 
   return (
@@ -467,10 +549,24 @@ const About = () => {
               grid-template-columns: 1fr !important;
             }
           }
+          
+          .profile-section::-webkit-scrollbar {
+            width: 4px;
+          }
+          
+          .profile-section::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+          }
+          
+          .profile-section::-webkit-scrollbar-thumb {
+            background: #ec4899;
+            border-radius: 10px;
+          }
         `}
       </style>
 
-      {/* Welcome Banner - New Section */}
+      {/* Welcome Banner */}
       <div style={styles.welcomeBanner}>
         <h1 style={styles.welcomeTitle}>✨ Welcome to Nexus Modeling School & Management ✨</h1>
         <p style={styles.welcomeText}>
@@ -479,7 +575,7 @@ const About = () => {
           art management, and production services.
         </p>
         <div style={styles.ownerBadge}>
-          👑 Owner: Professional Model <strong>Tade</strong> 👑
+          👑 Founder & CEO: Professional Model <strong>Tadele Balcha Wolde</strong> 👑
         </div>
         
         <div style={styles.infoGrid}>
@@ -576,7 +672,7 @@ const About = () => {
         <div className="story-content" style={styles.storyContent}>
           <h2 style={styles.storyTitle}>Our Story</h2>
           <p style={styles.storyText}>
-            Founded in 2018 by Professional Model Tade, Nexus Modeling School & Management started with a simple yet powerful vision - 
+            Founded in 2018 by Professional Model <strong>Tadele Balcha Wolde</strong>, Nexus Modeling School & Management started with a simple yet powerful vision - 
             to transform Ethiopia's modeling industry and create world-class talent that can compete globally.
           </p>
           <p style={styles.storyText}>
@@ -624,7 +720,7 @@ const About = () => {
         ))}
       </div>
 
-      {/* Our Team Section - With Coach Photos */}
+      {/* Our Team Section - With Experience Badges */}
       <div style={styles.teamSection}>
         <h2 style={styles.teamTitle}>Meet Our Expert Coaches</h2>
         <div style={styles.teamGrid}>
@@ -643,20 +739,63 @@ const About = () => {
               </div>
               <h3 style={styles.teamName}>{member.name}</h3>
               <p style={styles.teamRole}>{member.role}</p>
-              <p style={styles.teamDesc}>{member.desc}</p>
-              <div style={{ marginTop: '12px', display: 'flex', flexWrap: 'wrap', gap: '6px', justifyContent: 'center' }}>
-                {member.specialties.map((specialty, idx) => (
-                  <span key={idx} style={{
-                    background: '#f3e8ff',
-                    color: '#9333ea',
-                    padding: '4px 10px',
-                    borderRadius: '20px',
-                    fontSize: '10px',
-                    fontWeight: '600'
-                  }}>
-                    {specialty}
-                  </span>
+              
+              {/* Experience Badge */}
+              <div style={styles.experienceBadge}>
+                ⭐ {member.experience} Experience
+              </div>
+              
+              <div className="profile-section" style={styles.profileSection}>
+                {/* Personal Info for Tadele */}
+                {member.profile.personalInfo && (
+                  <>
+                    <div style={styles.profileTitle}>📋 PERSONAL INFORMATION</div>
+                    {Object.entries(member.profile.personalInfo).map(([key, value]) => (
+                      <p key={key} style={styles.profileText}><strong>{key}:</strong> {value}</p>
+                    ))}
+                  </>
+                )}
+                
+                {/* Intro Section */}
+                <p style={styles.profileText}>{member.profile.intro}</p>
+                
+                {/* Experience Section */}
+                <div style={styles.profileTitle}>🏆 EXPERIENCE & ACHIEVEMENTS</div>
+                {member.profile.experience.map((exp, i) => (
+                  <p key={i} style={styles.profileText}>• {exp}</p>
                 ))}
+                
+                {/* Pageant Judgment for Tadele */}
+                {member.profile.pageantJudgment && (
+                  <>
+                    <div style={styles.profileTitle}>👑 PAGEANT JUDGE</div>
+                    {member.profile.pageantJudgment.map((judgment, i) => (
+                      <p key={i} style={styles.profileText}>• {judgment}</p>
+                    ))}
+                  </>
+                )}
+                
+                {/* Campaigns Section */}
+                <div style={styles.profileTitle}>📺 CAMPAIGNS & BRAND WORK</div>
+                {member.profile.campaigns.map((camp, i) => (
+                  <p key={i} style={styles.profileText}>• {camp}</p>
+                ))}
+                
+                {/* Entrepreneurship Section */}
+                <div style={styles.profileTitle}>💎 ENTREPRENEURSHIP</div>
+                <p style={styles.profileText}>{member.profile.entrepreneurship}</p>
+                
+                {/* Skills Section */}
+                <div style={styles.profileTitle}>🎯 SKILLS</div>
+                <div style={styles.skillsList}>
+                  {member.profile.skills.map((skill, i) => (
+                    <span key={i} style={styles.skillTag}>{skill}</span>
+                  ))}
+                </div>
+                
+                {/* Location */}
+                <div style={styles.profileTitle}>📍 LOCATION</div>
+                <p style={styles.profileText}>{member.profile.location}</p>
               </div>
             </div>
           ))}
@@ -715,12 +854,12 @@ const About = () => {
       {/* Contact Information */}
       <div style={styles.contactInfo}>
         <p style={styles.contactText}>📞 For inquiries and admissions</p>
-        <p style={styles.contactNumber}>+25192 257 2652</p>
+        <p style={styles.contactNumber}>+251922572652</p>
         <p style={{ ...styles.contactText, marginTop: '10px', fontSize: '14px' }}>
           📍 Ayat, Addis Ababa, Ethiopia | ✉️ tademan562@gmail.com
         </p>
         <p style={{ marginTop: '10px', fontSize: '12px', color: '#6b7280' }}>
-          📷 Instagram: @Nexus_Modeling_management | 🎵 TikTok: @Nexus_Modeling_management
+          📷 Instagram: @Official_Tade_12 | 🎵 TikTok: @Official_Model_12 | 📘 Facebook: Official_Tadele Balcha
         </p>
       </div>
     </div>

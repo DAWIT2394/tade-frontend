@@ -286,12 +286,12 @@ const RegistrationForm = () => {
   };
 
   const outfitItemStyle = {
-  background: 'white',
-  borderRadius: '16px',
-  padding: '16px',
-  textAlign: 'center',
-  boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-};
+    background: 'white',
+    borderRadius: '16px',
+    padding: '16px',
+    textAlign: 'center',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+  };
 
   const outfitGenderStyle = {
     fontSize: '20px',
@@ -351,6 +351,25 @@ const RegistrationForm = () => {
     fontSize: '11px',
     color: '#6b7280',
   };
+
+  // Course options - Only these 7 courses
+  const courseOptions = [
+    { value: 'High Fashion & Editorial Model', label: '👗 High Fashion & Editorial Model' },
+    { value: 'Runway & Catwalk Model', label: '👠 Runway & Catwalk Model' },
+    { value: 'Commercial Model', label: '📺 Commercial Model' },
+    { value: 'Photo Model', label: '📸 Photo Model' },
+    { value: 'Fitness Model', label: '💪 Fitness Model' },
+    { value: 'Plus Size & Curve Model', label: '👑 Plus Size & Curve Model' },
+    { value: 'Parts Model', label: '🖐️ Parts Model (Hands/Feet/Legs)' },
+  ];
+
+  // Duration options based on courses
+  const durationOptions = [
+    { value: '6-10 Months', label: '📘 6-10 Months - High Fashion' },
+    { value: '4-8 Months', label: '📗 4-8 Months - Runway/Fitness/Curve' },
+    { value: '3-6 Months', label: '📙 3-6 Months - Commercial/Photo' },
+    { value: '2-4 Months', label: '📕 2-4 Months - Parts Model' },
+  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -649,10 +668,9 @@ const RegistrationForm = () => {
             <div style={{ fontSize: '11px', color: '#6b7280' }}>ወርሃዊ ክፍያ</div>
           </div>
           <div style={pricingItemStyle}>
-          <span style={cocBadgeStyle}>✓ COC አለው</span>
+            <span style={cocBadgeStyle}>✓ COC አለው</span>
             <div style={pricingDurationStyle}>📕 10 ወር ኮርስ</div>
             <div style={pricingFeeStyle}>2,500 ብር</div>
-            
             <div style={{ fontSize: '11px', color: '#6b7280' }}>ወርሃዊ ክፍያ</div>
           </div>
         </div>
@@ -753,10 +771,9 @@ const RegistrationForm = () => {
             onBlur={handleBlur}
             style={inputStyle}
           >
-            <option value="">Select Gender ⚥</option>
+            <option value="">Select Gender </option>
             <option value="Female">Female 👩</option>
             <option value="Male">Male 👨</option>
-            <option value="Other">Other 🌈</option>
           </select>
           
           <input
@@ -821,7 +838,7 @@ const RegistrationForm = () => {
           </select>
         </div>
 
-        {/* Course Selection */}
+        {/* Course Selection - Only 7 Modeling Courses */}
         <select
           required
           value={formData.course}
@@ -831,12 +848,11 @@ const RegistrationForm = () => {
           style={inputStyle}
         >
           <option value="">Select Modeling Course 📚</option>
-          <option value="Professional Modeling">✨ Professional Modeling</option>
-          <option value="Fashion Runway">👠 Fashion Runway</option>
-          <option value="Photo Posing">📸 Photo Posing & Portfolio</option>
-          <option value="Personality Development">💫 Personality Development</option>
-          <option value="Grooming & Etiquette">👔 Grooming & Etiquette</option>
-          <option value="Fitness & Wellness">💪 Fitness & Wellness for Models</option>
+          {courseOptions.map((course) => (
+            <option key={course.value} value={course.value}>
+              {course.label}
+            </option>
+          ))}
         </select>
 
         {/* Course Duration */}
@@ -849,9 +865,11 @@ const RegistrationForm = () => {
           style={inputStyle}
         >
           <option value="">Select Course Duration ⏰</option>
-          <option value="3 Months">📘 3 Months Course - 3,000 ብር/ወር</option>
-          <option value="6 Months">📗 6 Months Course - 2,500 ብር/ወር</option>
-          <option value="10 Months">📕 10 Months Course - 2,500 ብር/ወር</option>
+          {durationOptions.map((duration) => (
+            <option key={duration.value} value={duration.value}>
+              {duration.label}
+            </option>
+          ))}
         </select>
 
         {/* Profile Image */}

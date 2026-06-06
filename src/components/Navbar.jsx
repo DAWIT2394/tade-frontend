@@ -332,7 +332,7 @@ const Navbar = () => {
         {/* Desktop Buttons */}
         <div className="button-group" style={styles.buttonGroup}>
           <span className="phone-number" style={styles.phoneNumber}>
-            📞 +25192 257 2652
+            📞 +251940848080
           </span>
           
           <button 
@@ -474,7 +474,7 @@ const Navbar = () => {
             
             <div style={styles.mobileButtonGroup}>
               <div style={{...styles.phoneNumber, margin: '0 0 8px 0', justifyContent: 'center'}}>
-                📞 +25192 257 2652
+                📞 +251940848080
               </div>
               
               <button 
