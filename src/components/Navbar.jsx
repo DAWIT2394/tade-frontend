@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const Navbar = () => {
@@ -14,6 +14,21 @@ const Navbar = () => {
     localStorage.removeItem('adminToken');
     setIsAdminLoggedIn(false);
     navigate('/');
+  };
+
+  // Function to scroll to top of page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Smooth scroll to top
+    });
+  };
+
+  // Handle navigation with scroll to top
+  const handleNavigation = (path) => {
+    navigate(path);
+    scrollToTop();
+    setIsOpen(false); // Close mobile menu if open
   };
 
   // Styles
@@ -40,6 +55,7 @@ const Navbar = () => {
       alignItems: 'center',
       gap: '8px',
       textDecoration: 'none',
+      cursor: 'pointer',
     },
     logoIcon: {
       fontSize: '32px',
@@ -71,6 +87,7 @@ const Navbar = () => {
       padding: '8px 12px',
       borderRadius: '8px',
       position: 'relative',
+      cursor: 'pointer',
     },
     buttonGroup: {
       display: 'flex',
@@ -150,6 +167,7 @@ const Navbar = () => {
       transition: 'all 0.3s ease',
       display: 'block',
       textAlign: 'center',
+      cursor: 'pointer',
     },
     mobileButtonGroup: {
       display: 'flex',
@@ -311,22 +329,22 @@ const Navbar = () => {
   return (
     <nav style={styles.navbar}>
       <div style={styles.container}>
-        {/* Logo Section */}
-        <Link to="/" style={styles.logoContainer}>
+        {/* Logo Section - Now scrolls to top on click */}
+        <div onClick={() => handleNavigation('/')} style={styles.logoContainer}>
           <span style={styles.logoIcon}>👣</span>
           <div>
             <div style={styles.logoText}>Nexus</div>
             <div style={styles.logoSubtext}>Modeling School & Management</div>
           </div>
-        </Link>
+        </div>
 
         {/* Desktop Menu */}
         <div className="desktop-menu" style={styles.desktopMenu}>
-          <Link to="/" className="nav-link" style={styles.navLink}>Home</Link>
-          <Link to="/about" className="nav-link" style={styles.navLink}>About</Link>
-          <Link to="/courses" className="nav-link" style={styles.navLink}>Courses</Link>
-          <Link to="/gallery" className="nav-link" style={styles.navLink}>Gallery</Link>
-          <Link to="/contact" className="nav-link" style={styles.navLink}>Contact</Link>
+          <div onClick={() => handleNavigation('/')} className="nav-link" style={styles.navLink}>Home</div>
+          <div onClick={() => handleNavigation('/about')} className="nav-link" style={styles.navLink}>About</div>
+          <div onClick={() => handleNavigation('/courses')} className="nav-link" style={styles.navLink}>Courses</div>
+          <div onClick={() => handleNavigation('/gallery')} className="nav-link" style={styles.navLink}>Gallery</div>
+          <div onClick={() => handleNavigation('/contact')} className="nav-link" style={styles.navLink}>Contact</div>
         </div>
 
         {/* Desktop Buttons */}
@@ -336,7 +354,7 @@ const Navbar = () => {
           </span>
           
           <button 
-            onClick={() => navigate('/register')} 
+            onClick={() => handleNavigation('/register')} 
             className="register-btn"
             style={styles.registerBtn}
             onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
@@ -347,7 +365,7 @@ const Navbar = () => {
           {isAdminLoggedIn ? (
             <>
               <button 
-                onClick={() => navigate('/dashboard')} 
+                onClick={() => handleNavigation('/dashboard')} 
                 style={styles.dashboardBtn}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = '#ec4899';
@@ -360,7 +378,10 @@ const Navbar = () => {
                 Dashboard 📊
               </button>
               <button 
-                onClick={handleLogout} 
+                onClick={() => {
+                  handleLogout();
+                  scrollToTop();
+                }} 
                 style={styles.logoutBtn}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = '#ef4444';
@@ -375,7 +396,7 @@ const Navbar = () => {
             </>
           ) : (
             <button 
-              onClick={() => navigate('/admin')} 
+              onClick={() => handleNavigation('/admin')} 
               style={styles.adminBtn}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = '#6366f1';
@@ -401,10 +422,9 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="mobile-menu" style={styles.mobileMenu}>
-            <Link 
-              to="/" 
+            <div 
+              onClick={() => handleNavigation('/')} 
               style={styles.mobileNavLink}
-              onClick={() => setIsOpen(false)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = '#fce7f3';
                 e.currentTarget.style.color = '#ec4899';
@@ -414,11 +434,10 @@ const Navbar = () => {
                 e.currentTarget.style.color = '#374151';
               }}>
               🏠 Home
-            </Link>
-            <Link 
-              to="/about" 
+            </div>
+            <div 
+              onClick={() => handleNavigation('/about')} 
               style={styles.mobileNavLink}
-              onClick={() => setIsOpen(false)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = '#fce7f3';
                 e.currentTarget.style.color = '#ec4899';
@@ -428,11 +447,10 @@ const Navbar = () => {
                 e.currentTarget.style.color = '#374151';
               }}>
               ℹ️ About
-            </Link>
-            <Link 
-              to="/courses" 
+            </div>
+            <div 
+              onClick={() => handleNavigation('/courses')} 
               style={styles.mobileNavLink}
-              onClick={() => setIsOpen(false)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = '#fce7f3';
                 e.currentTarget.style.color = '#ec4899';
@@ -442,11 +460,10 @@ const Navbar = () => {
                 e.currentTarget.style.color = '#374151';
               }}>
               📚 Courses
-            </Link>
-            <Link 
-              to="/gallery" 
+            </div>
+            <div 
+              onClick={() => handleNavigation('/gallery')} 
               style={styles.mobileNavLink}
-              onClick={() => setIsOpen(false)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = '#fce7f3';
                 e.currentTarget.style.color = '#ec4899';
@@ -456,11 +473,10 @@ const Navbar = () => {
                 e.currentTarget.style.color = '#374151';
               }}>
               🖼️ Gallery
-            </Link>
-            <Link 
-              to="/contact" 
+            </div>
+            <div 
+              onClick={() => handleNavigation('/contact')} 
               style={styles.mobileNavLink}
-              onClick={() => setIsOpen(false)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = '#fce7f3';
                 e.currentTarget.style.color = '#ec4899';
@@ -470,7 +486,7 @@ const Navbar = () => {
                 e.currentTarget.style.color = '#374151';
               }}>
               📞 Contact
-            </Link>
+            </div>
             
             <div style={styles.mobileButtonGroup}>
               <div style={{...styles.phoneNumber, margin: '0 0 8px 0', justifyContent: 'center'}}>
@@ -478,10 +494,7 @@ const Navbar = () => {
               </div>
               
               <button 
-                onClick={() => {
-                  navigate('/register');
-                  setIsOpen(false);
-                }} 
+                onClick={() => handleNavigation('/register')} 
                 style={styles.mobileRegisterBtn}>
                 Register 📝
               </button>
@@ -489,10 +502,7 @@ const Navbar = () => {
               {isAdminLoggedIn ? (
                 <>
                   <button 
-                    onClick={() => {
-                      navigate('/dashboard');
-                      setIsOpen(false);
-                    }} 
+                    onClick={() => handleNavigation('/dashboard')} 
                     style={styles.mobileDashboardBtn}>
                     Dashboard 📊
                   </button>
@@ -507,10 +517,7 @@ const Navbar = () => {
                 </>
               ) : (
                 <button 
-                  onClick={() => {
-                    navigate('/admin');
-                    setIsOpen(false);
-                  }} 
+                  onClick={() => handleNavigation('/admin')} 
                   style={styles.mobileAdminBtn}>
                   Admin 👤
                 </button>
