@@ -10,11 +10,26 @@ import g5 from '../assets/g5.JPG';
 import g6 from '../assets/g6.JPG';
 import g7 from '../assets/g7.JPG';
 import g8 from '../assets/g8.PNG';
-
 import g9 from '../assets/g9.JPG';
 import g10 from '../assets/g10.JPG';
 import g11 from '../assets/g11.JPG';
 import g12 from '../assets/g12.JPG';
+
+// Local gallery data with imported images - defined outside component
+const SAMPLE_GALLERY = [
+  { id: 1, image: g1, title: 'Runway Training Session', category: 'training' },
+  { id: 2, image: g2, title: 'Fashion Show 2023', category: 'event' },
+  { id: 3, image: g3, title: 'Graduation Ceremony', category: 'graduation' },
+  { id: 4, image: g4, title: 'Professional Photo Shoot', category: 'photoshoot' },
+  { id: 5, image: g5, title: 'Model Workshop', category: 'workshop' },
+  { id: 6, image: g6, title: 'Fitness Training', category: 'training' },
+  { id: 7, image: g7, title: 'Portfolio Session', category: 'photoshoot' },
+  { id: 8, image: g8, title: 'Fashion Week Ethiopia', category: 'event' },
+  { id: 9, image: g9, title: 'Award Ceremony 2024', category: 'graduation' },
+  { id: 10, image: g10, title: 'Posing Masterclass', category: 'workshop' },
+  { id: 11, image: g11, title: 'Catwalk Practice', category: 'training' },
+  { id: 12, image: g12, title: 'Magazine Cover Shoot', category: 'photoshoot' },
+];
 
 const Gallery = () => {
   const [gallery, setGallery] = useState([]);
@@ -23,37 +38,21 @@ const Gallery = () => {
   const [filter, setFilter] = useState('all');
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  // Local gallery data with imported images - defined outside component to avoid dependency issues
-  const sampleGallery = [
-    { id: 1, image: g1, title: 'Runway Training Session', category: 'training' },
-    { id: 2, image: g2, title: 'Fashion Show 2023', category: 'event' },
-    { id: 3, image: g3, title: 'Graduation Ceremony', category: 'graduation' },
-    { id: 4, image: g4, title: 'Professional Photo Shoot', category: 'photoshoot' },
-    { id: 5, image: g5, title: 'Model Workshop', category: 'workshop' },
-    { id: 6, image: g6, title: 'Fitness Training', category: 'training' },
-    { id: 7, image: g7, title: 'Portfolio Session', category: 'photoshoot' },
-    { id: 8, image: g8, title: 'Fashion Week Ethiopia', category: 'event' },
-    { id: 9, image: g9, title: 'Award Ceremony 2024', category: 'graduation' },
-    { id: 10, image: g10, title: 'Posing Masterclass', category: 'workshop' },
-    { id: 11, image: g11, title: 'Catwalk Practice', category: 'training' },
-    { id: 12, image: g12, title: 'Magazine Cover Shoot', category: 'photoshoot' },
-  ];
-
   const loadGallery = useCallback(async () => {
     try {
       const res = await getGallery();
       if (res.data && res.data.length > 0) {
         setGallery(res.data);
       } else {
-        setGallery(sampleGallery);
+        setGallery(SAMPLE_GALLERY);
       }
     } catch (err) {
       console.error('Error loading gallery:', err);
-      setGallery(sampleGallery);
+      setGallery(SAMPLE_GALLERY);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, []); // No dependencies needed since SAMPLE_GALLERY is defined outside component
 
   useEffect(() => {
     loadGallery();
