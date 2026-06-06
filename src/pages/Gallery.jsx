@@ -1,5 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { getGallery } from '../services/api';
+
+// Import images from local folder
+import g1 from '../assets/g1.jpg';
+import g2 from '../assets/g2.JPG';
+import g3 from '../assets/g3.JPG';
+import g4 from '../assets/g4.JPG';
+import g5 from '../assets/g5.JPG';
+import g6 from '../assets/g6.JPG';
+import g7 from '../assets/g7.JPG';
+import g8 from '../assets/g8.PNG';
+
+import g9 from '../assets/g9.JPG';
+import g10 from '../assets/g10.JPG';
+import g11 from '../assets/g11.JPG';
+import g12 from '../assets/g12.JPG';
 
 const Gallery = () => {
   const [gallery, setGallery] = useState([]);
@@ -8,27 +23,43 @@ const Gallery = () => {
   const [filter, setFilter] = useState('all');
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  useEffect(() => {
-    getGallery()
-      .then((res) => setGallery(res.data))
-      .catch((err) => console.error('Error loading gallery:', err))
-      .finally(() => setLoading(false));
-  }, []);
-
-  // Sample gallery data if API returns empty
+  // Local gallery data with imported images - defined outside component to avoid dependency issues
   const sampleGallery = [
-    { id: 1, image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b', title: 'Runway Training', category: 'training' },
-    { id: 2, image: 'https://images.unsplash.com/photo-1524502397800-2eeaad7c71fe', title: 'Fashion Show 2023', category: 'event' },
-    { id: 3, image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9', title: 'Graduation Ceremony', category: 'graduation' },
-    { id: 4, image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb', title: 'Professional Photo Shoot', category: 'photoshoot' },
-    { id: 5, image: 'https://images.unsplash.com/photo-1503185912284-5271ff81aae4', title: 'Model Workshop', category: 'workshop' },
-    { id: 6, image: 'https://images.unsplash.com/photo-1485463611174-f302f6a5c1c9', title: 'Fitness Training', category: 'training' },
-    { id: 7, image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2', title: 'Portfolio Session', category: 'photoshoot' },
-    { id: 8, image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce', title: 'Fashion Week', category: 'event' },
-    { id: 9, image: 'https://images.unsplash.com/photo-1507398941214-572c25f4b1dc', title: 'Award Ceremony', category: 'graduation' },
+    { id: 1, image: g1, title: 'Runway Training Session', category: 'training' },
+    { id: 2, image: g2, title: 'Fashion Show 2023', category: 'event' },
+    { id: 3, image: g3, title: 'Graduation Ceremony', category: 'graduation' },
+    { id: 4, image: g4, title: 'Professional Photo Shoot', category: 'photoshoot' },
+    { id: 5, image: g5, title: 'Model Workshop', category: 'workshop' },
+    { id: 6, image: g6, title: 'Fitness Training', category: 'training' },
+    { id: 7, image: g7, title: 'Portfolio Session', category: 'photoshoot' },
+    { id: 8, image: g8, title: 'Fashion Week Ethiopia', category: 'event' },
+    { id: 9, image: g9, title: 'Award Ceremony 2024', category: 'graduation' },
+    { id: 10, image: g10, title: 'Posing Masterclass', category: 'workshop' },
+    { id: 11, image: g11, title: 'Catwalk Practice', category: 'training' },
+    { id: 12, image: g12, title: 'Magazine Cover Shoot', category: 'photoshoot' },
   ];
 
-  const displayGallery = gallery.length > 0 ? gallery : sampleGallery;
+  const loadGallery = useCallback(async () => {
+    try {
+      const res = await getGallery();
+      if (res.data && res.data.length > 0) {
+        setGallery(res.data);
+      } else {
+        setGallery(sampleGallery);
+      }
+    } catch (err) {
+      console.error('Error loading gallery:', err);
+      setGallery(sampleGallery);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    loadGallery();
+  }, [loadGallery]);
+
+  const displayGallery = gallery;
 
   const categories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
@@ -116,7 +147,7 @@ const Gallery = () => {
     },
     galleryGrid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
       gap: '24px',
       marginBottom: '60px',
     },
@@ -125,36 +156,50 @@ const Gallery = () => {
       borderRadius: '16px',
       overflow: 'hidden',
       cursor: 'pointer',
-      aspectRatio: '4/3',
+      height: '280px',
       boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+      backgroundColor: '#f3f4f6',
+    },
+    imageWrapper: {
+      width: '100%',
+      height: '100%',
+      overflow: 'hidden',
+      position: 'relative',
     },
     galleryImage: {
       width: '100%',
       height: '100%',
       objectFit: 'cover',
+      objectPosition: 'center center',
       transition: 'transform 0.5s ease',
+      display: 'block',
     },
     overlay: {
       position: 'absolute',
       bottom: 0,
       left: 0,
       right: 0,
-      background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
-      padding: '20px',
+      background: 'linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4), transparent)',
+      padding: '20px 16px 16px 16px',
       transform: 'translateY(100%)',
       transition: 'transform 0.3s ease',
     },
     cardTitle: {
       color: 'white',
-      fontSize: '18px',
+      fontSize: '16px',
       fontWeight: 'bold',
-      marginBottom: '8px',
+      marginBottom: '4px',
     },
     cardCategory: {
       color: '#ec4899',
-      fontSize: '12px',
+      fontSize: '11px',
       fontWeight: '600',
+      textTransform: 'capitalize',
+      display: 'inline-block',
+      padding: '2px 8px',
+      background: 'rgba(0,0,0,0.5)',
+      borderRadius: '12px',
     },
     modal: {
       position: 'fixed',
@@ -178,20 +223,24 @@ const Gallery = () => {
     modalImage: {
       maxWidth: '100%',
       maxHeight: '90vh',
+      width: 'auto',
+      height: 'auto',
+      objectFit: 'contain',
       borderRadius: '12px',
       boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
     },
     modalClose: {
       position: 'absolute',
-      top: '-40px',
-      right: '0',
+      top: '-45px',
+      right: '-10px',
       background: 'white',
       border: 'none',
-      fontSize: '24px',
+      fontSize: '20px',
       cursor: 'pointer',
-      padding: '8px 16px',
-      borderRadius: '8px',
+      padding: '8px 14px',
+      borderRadius: '50%',
       transition: 'all 0.3s ease',
+      fontWeight: 'bold',
     },
     modalTitle: {
       position: 'absolute',
@@ -283,17 +332,6 @@ const Gallery = () => {
             100% { transform: rotate(360deg); }
           }
           
-          @keyframes zoomIn {
-            from {
-              opacity: 0;
-              transform: scale(0.9);
-            }
-            to {
-              opacity: 1;
-              transform: scale(1);
-            }
-          }
-          
           .gallery-card:hover img {
             transform: scale(1.1);
           }
@@ -304,7 +342,20 @@ const Gallery = () => {
           
           @media (max-width: 768px) {
             .gallery-grid {
-              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+              grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+              gap: 16px !important;
+            }
+            .gallery-card {
+              height: 250px !important;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .gallery-grid {
+              grid-template-columns: 1fr !important;
+            }
+            .gallery-card {
+              height: 280px !important;
             }
           }
         `}
@@ -367,7 +418,7 @@ const Gallery = () => {
             <div className="gallery-grid" style={styles.galleryGrid}>
               {filteredGallery.map((item, index) => (
                 <div
-                  key={item.id || item._id}
+                  key={item.id || item._id || index}
                   className="gallery-card"
                   style={styles.galleryCard}
                   onClick={() => setSelectedImage(item)}
@@ -379,11 +430,14 @@ const Gallery = () => {
                     e.currentTarget.style.transform = 'translateY(0)';
                     e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
                   }}>
-                  <img
-                    src={item.image?.startsWith('http') ? item.image : `http://localhost:5000${item.image}`}
-                    alt={item.title}
-                    style={styles.galleryImage}
-                  />
+                  <div style={styles.imageWrapper}>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      style={styles.galleryImage}
+                      loading="lazy"
+                    />
+                  </div>
                   <div className="overlay" style={styles.overlay}>
                     <div style={styles.cardTitle}>{item.title}</div>
                     <div style={styles.cardCategory}>
@@ -449,7 +503,7 @@ const Gallery = () => {
               ✕
             </button>
             <img
-              src={selectedImage.image?.startsWith('http') ? selectedImage.image : `http://localhost:5000${selectedImage.image}`}
+              src={selectedImage.image}
               alt={selectedImage.title}
               style={styles.modalImage}
             />

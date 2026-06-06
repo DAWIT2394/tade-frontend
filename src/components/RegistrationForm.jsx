@@ -649,14 +649,15 @@ const RegistrationForm = () => {
             <div style={{ fontSize: '11px', color: '#6b7280' }}>ወርሃዊ ክፍያ</div>
           </div>
           <div style={pricingItemStyle}>
+          <span style={cocBadgeStyle}>✓ COC አለው</span>
             <div style={pricingDurationStyle}>📕 10 ወር ኮርስ</div>
             <div style={pricingFeeStyle}>2,500 ብር</div>
+            
             <div style={{ fontSize: '11px', color: '#6b7280' }}>ወርሃዊ ክፍያ</div>
           </div>
         </div>
         <div style={registrationFeeStyle}>
           📝 የምዝገባ ክፍያ (Registration Fee): <strong>500 ብር</strong>
-          <span style={cocBadgeStyle}>✓ COC አለው</span>
         </div>
         <div style={{ textAlign: 'center', fontSize: '10px', color: '#92400e', marginTop: '8px' }}>
           * ክፍያ በወርሃዊ ክፍያ መልክ ይከፈላል | Monthly payment plan available

@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import heroImage from '../assets/about.JPG';
+import tadeImage from '../assets/herr.JPG';
+import selamImage from '../assets/hibist.JPG';
+
 
 const About = () => {
   const styles = {
@@ -225,7 +229,7 @@ const About = () => {
     },
     teamGrid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
       gap: '30px',
     },
     teamCard: {
@@ -242,10 +246,18 @@ const About = () => {
       height: '150px',
       borderRadius: '50%',
       margin: '0 auto 20px',
+      overflow: 'hidden',
       background: 'linear-gradient(135deg, #ec4899, #9333ea)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    teamPhoto: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+    },
+    teamIcon: {
       fontSize: '64px',
     },
     teamName: {
@@ -375,6 +387,29 @@ const About = () => {
     { icon: '🎉', title: 'Event' },
     { icon: '🎨', title: 'Art Management' },
     { icon: '🎥', title: 'Production' },
+  ];
+
+  // Team members with imported images
+  const teamMembers = [
+    { 
+      name: ' Coach Tade', 
+      role: 'Founder & Professional Model', 
+      photo: tadeImage,
+      icon: '👑', 
+      desc: 'Professional Model with 8+ years of international experience. Specializes in high fashion and commercial modeling.',
+      specialties: ['Runway', 'Editorial', 'Brand Endorsements']
+    },
+    { 
+      name: 'Coach Hibist', 
+      role: 'Head Trainer & Runway Coach', 
+      photo: selamImage,
+      icon: '👩‍🎨', 
+      desc: 'Former international runway model with 10+ years of experience. Trained over 300 successful models.',
+      specialties: ['Catwalk', 'Posture', 'Stage Presence']
+    },
+ 
+  
+ 
   ];
 
   return (
@@ -558,7 +593,7 @@ const About = () => {
         </div>
         <div className="story-image">
           <img 
-            src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3" 
+            src={heroImage}
             alt="Nexus Modeling School"
             style={styles.storyImage}
             onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
@@ -589,6 +624,45 @@ const About = () => {
         ))}
       </div>
 
+      {/* Our Team Section - With Coach Photos */}
+      <div style={styles.teamSection}>
+        <h2 style={styles.teamTitle}>Meet Our Expert Coaches</h2>
+        <div style={styles.teamGrid}>
+          {teamMembers.map((member, index) => (
+            <div 
+              key={index}
+              style={{
+                ...styles.teamCard,
+                transform: hoveredTeam === index ? 'translateY(-10px)' : 'translateY(0)',
+                boxShadow: hoveredTeam === index ? '0 15px 35px rgba(0,0,0,0.15)' : '0 10px 30px rgba(0,0,0,0.08)',
+              }}
+              onMouseEnter={() => setHoveredTeam(index)}
+              onMouseLeave={() => setHoveredTeam(null)}>
+              <div style={styles.teamImage}>
+                <img src={member.photo} alt={member.name} style={styles.teamPhoto} />
+              </div>
+              <h3 style={styles.teamName}>{member.name}</h3>
+              <p style={styles.teamRole}>{member.role}</p>
+              <p style={styles.teamDesc}>{member.desc}</p>
+              <div style={{ marginTop: '12px', display: 'flex', flexWrap: 'wrap', gap: '6px', justifyContent: 'center' }}>
+                {member.specialties.map((specialty, idx) => (
+                  <span key={idx} style={{
+                    background: '#f3e8ff',
+                    color: '#9333ea',
+                    padding: '4px 10px',
+                    borderRadius: '20px',
+                    fontSize: '10px',
+                    fontWeight: '600'
+                  }}>
+                    {specialty}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Core Values Section */}
       <div style={styles.valuesSection}>
         <h2 style={styles.valuesTitle}>Our Core Values</h2>
@@ -612,34 +686,6 @@ const About = () => {
               <div style={styles.valueIcon}>{value.icon}</div>
               <h3 style={styles.valueTitle}>{value.title}</h3>
               <p style={styles.valueText}>{value.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Our Team Section */}
-      <div style={styles.teamSection}>
-        <h2 style={styles.teamTitle}>Meet Our Expert Team</h2>
-        <div style={styles.teamGrid}>
-          {[
-            { name: 'Tade', role: 'Founder & Professional Model', icon: '👑', desc: 'Professional Model & Industry Expert' },
-            { name: 'Selam Tesfaye', role: 'Head Trainer', icon: '👩‍🎨', desc: '10+ years in international modeling industry' },
-            { name: 'Dawit Mekonnen', role: 'Runway Coach', icon: '👔', desc: 'Former international runway model' },
-            { name: 'Meron Assefa', role: 'Personality Development', icon: '💫', desc: 'Psychology & communication expert' }
-          ].map((member, index) => (
-            <div 
-              key={index}
-              style={{
-                ...styles.teamCard,
-                transform: hoveredTeam === index ? 'translateY(-10px)' : 'translateY(0)',
-                boxShadow: hoveredTeam === index ? '0 15px 35px rgba(0,0,0,0.15)' : '0 10px 30px rgba(0,0,0,0.08)',
-              }}
-              onMouseEnter={() => setHoveredTeam(index)}
-              onMouseLeave={() => setHoveredTeam(null)}>
-              <div style={styles.teamImage}>{member.icon}</div>
-              <h3 style={styles.teamName}>{member.name}</h3>
-              <p style={styles.teamRole}>{member.role}</p>
-              <p style={styles.teamDesc}>{member.desc}</p>
             </div>
           ))}
         </div>
