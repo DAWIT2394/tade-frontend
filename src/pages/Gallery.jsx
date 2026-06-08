@@ -9,7 +9,7 @@ import g5 from '../assets/g5.PNG';
 import g6 from '../assets/g6.JPG';
 import g7 from '../assets/g7.JPG';
 import g8 from '../assets/g8.PNG';
-import g9 from '../assets/g9.JPG';
+import g9 from '../assets/g9.jpg';
 // import g10 from '../assets/g10.JPG';
 import g11 from '../assets/g11.JPG';
 import g12 from '../assets/g12.JPG';
