@@ -477,39 +477,54 @@ const About = () => {
       desc: 'Former international runway model with 3+ years of experience. Trained over 300 successful models.',
       specialties: ['Catwalk', 'Posture', 'Stage Presence'],
       experience: '3+ Years',
-      profile: {
-        personalInfo: {
-          
-        },
-        intro: 'Former international runway model with a decade of experience walking for top designers across Europe, Asia, and Africa. Passionate about nurturing new talent and helping aspiring models achieve their dreams through proper technique and confidence building.',
-        experience: [
-          'Former Model - Paris Fashion Week (2014-2022)',
-          'Runway Coach for 3+ years across 3 continents',
-          'Trained over 300 successful models, 50+ now working internationally',
-          'International modeling competition winner - Paris 2015',
-          'Worked with top photographers and designers globally',
-          'Featured in campaigns for L\'Oréal and Dior'
-        ],
-        pageantJudgment: [
-          'Ethiopia Model Search 2023 - Head Judge',
-          'African Fashion Week 2024 - Panel Judge',
-          'Model Talent Competition Ethiopia - Lead Coach & Judge',
-          'Nexus Annual Model Showcase - Chief Judge',
-          'East Africa Model Competition - Guest Judge'
-        ],
-        campaigns: [
-          'High Fashion Campaign - Paris Fashion Week Collections',
-          'Beauty Campaign - L\'Oréal Paris 2022-2024',
-          'Luxury Brand - Dior Beauty Ambassador',
-          'Fashion Week Runway Shows - Paris, Milan, London',
-          'Bridal Collection - International Wedding Magazine',
-          'Lingerie Campaign - Global Brand Launch'
-        ],
-        entrepreneurship: 'Senior coach at Nexus Modeling School since 2019, developing the comprehensive curriculum and training program that has become the gold standard for modeling education in Ethiopia.',
-        skills: ['Catwalk Technique', 'Posture Correction', 'Stage Presence', 'Confidence Building', 'Portfolio Development', 'Fashion Styling', 'Etiquette Training', 'Photo Posing'],
-        location: 'Addis Ababa, Ethiopia'
-      }
-    }
+profile: {
+  personalInfo: {},
+
+  intro: 'Professional fashion model based in Ethiopia with extensive experience in runway shows, fashion weeks, commercial campaigns, billboard advertisements, and brand collaborations. Passionate about fashion, creativity, and storytelling through visual media. Founder and owner of the jewelry brand Netela.',
+
+  experience: [
+    'Model at African Sourcing Fashion Week (AFSW)',
+    'Runway model at Hub of Africa Fashion Week (HAFW)',
+    'Selected participant at GTCO Fashion Week, Nigeria',
+    'Featured model at GTCO Fashion Weekend',
+    'Appeared in Ethio Telecom billboard advertising campaigns',
+    'Modeled for Dorga Hair Oil commercial and promotional campaigns',
+    'Collaborated with leading Ethiopian fashion and lifestyle brands',
+    'Participated in fashion editorials, lookbooks, and creative campaigns'
+  ],
+
+  achievements: [
+    'Featured in major Ethiopian and international fashion events',
+    'Worked with renowned designers and fashion brands',
+    'Experienced in studio, outdoor, beauty, and commercial photography',
+    'Built a successful personal brand in the fashion industry',
+    'Founder of the Netela Jewelry brand'
+  ],
+
+  campaigns: [
+    'Ethio Telecom Billboard Advertising Campaign',
+    'Dorga Hair Oil Promotional Campaign',
+    'Fashion Editorial and Lookbook Productions',
+    'Creative Fashion Brand Collaborations',
+    'Commercial Photography Projects',
+    'Lifestyle and Beauty Campaigns'
+  ],
+
+  entrepreneurship: 'Founder and Owner of Netela Jewelry, a jewelry brand focused on unique and stylish accessories. Responsible for brand development, creative direction, product promotion, marketing, and business growth.',
+
+  skills: [
+    'Runway Modeling',
+    'Commercial Modeling',
+    'Editorial Modeling',
+    'Brand Representation',
+    'Fashion Campaigns',
+    'Creative Collaboration',
+    'Social Media Promotion',
+    'Fashion Presentation'
+  ],
+
+  location: 'Addis Ababa, Ethiopia'
+}    }
   ];
 
   return (
@@ -657,7 +672,7 @@ const About = () => {
         <div style={styles.logoIcon}>👣</div>
         <h1 style={styles.title}>Nexus Modeling School & Management</h1>
         <p style={styles.subtitle}>
-          Ethiopia's premier institution for professional modeling education, 
+          EEthiopia's premier institution for professional modeling education, 
           empowering dreams and shaping the future of fashion since 2018
         </p>
       </div>
