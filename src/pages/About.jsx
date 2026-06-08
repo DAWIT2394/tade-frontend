@@ -436,38 +436,68 @@ const About = () => {
       desc: 'Professional Model with 6+ years of international experience. Specializes in high fashion and commercial modeling.',
       specialties: ['Runway', 'Editorial', 'Brand Endorsements'],
       experience: '6+ Years',
-      profile: {
-        personalInfo: {
-          
-        },
-        intro: 'Professional international model with extensive experience in high fashion and commercial modeling. Founder and CEO of Nexus Modeling School, dedicated to transforming Ethiopia\'s fashion industry and creating world-class talent.',
-        experience: [
-          'International Runway Model - Milan Fashion Week 2022-2024',
-          'Brand Ambassador for multiple international luxury brands',
-          'Featured in top fashion magazines including Vogue Italia and Harper\'s Bazaar',
-          '6+ years of professional modeling experience across 12 countries',
-          'Walked for renowned designers including Armani, Versace, and Gucci',
-          'Commercial campaigns for global brands in Dubai, Paris, and New York'
-        ],
-        pageantJudgment: [
-          'Miss Ethiopia 2023 - Head Judge',
-          'Ethiopia Next Top Model Season 4 - Panel Judge',
-          'International Model Search Competition 2024 - Lead Judge',
-          'African Fashion Week Model Competition - Chief Judge',
-          'Nexus Model Star Search - Creator & Head Judge'
-        ],
-        campaigns: [
-          'Luxury Fashion Campaign - Paris Fashion Week 2024',
-          'Commercial Campaign - Dubai Shopping Festival 2023',
-          'Editorial Shoots - Vogue Italia November 2023',
-          'Brand Endorsements - Multiple International Fashion Brands',
-          'Lookbook - Spring/Summer Collection 2024',
-          'Fitness Campaign - International Sportswear Brand'
-        ],
-        entrepreneurship: 'Founded Nexus Modeling School in 2018 with just 15 students. Under his leadership, the school has grown to over 500 successful graduates, established partnerships with international modeling agencies, and created Ethiopia\'s first professional modeling certification program.',
-        skills: ['Runway Walking', 'Editorial Posing', 'Commercial Modeling', 'Brand Representation', 'Public Speaking', 'Fashion Direction', 'Talent Scouting', 'Portfolio Development'],
-        location: 'Addis Ababa, Ethiopia & International'
-      }
+     profile: {
+ 
+
+  intro: 'Professional Ethiopian model, actor, modeling coach, and entrepreneur with extensive experience in fashion shows, television commercials, billboard campaigns, music videos, films, and brand ambassador roles. Ethiopian Next Top Model 2024 First Runner-Up and Founder & CEO of Nexus Modeling School & Management.',
+
+  experience: [
+    'Ethiopian Next Top Model 2024 – First Runner-Up Winner',
+    'Modeling Coach at New Hub Modeling and Nexus Modeling School & Management',
+    'Performed in numerous stage fashion shows across Ethiopia',
+    'Main cast in 15+ music videos',
+    'Actor in films, cinema productions, and short movies',
+    'Featured in major billboard advertising campaigns',
+    'Participated in television advertisements for banking, soap, spa, and lifestyle brands',
+    'Brand Ambassador for Alphamale Men’s Clothing for 6 months',
+    'Worked with photographers, directors, fashion designers, and advertising agencies'
+  ],
+
+  pageantJudgment: [
+    'Miss Tourism Oromia 2025 – Judge',
+    'Miss Irreecha 2025 – Judge',
+    'Miss Bishoftu 2025 – Judge'
+  ],
+
+  campaigns: [
+    'Safaricom Ethiopia Billboard Campaign',
+    'Safaricom Ethiopia Video Commercial',
+    'Commercial Bank of Ethiopia (CBE) Billboard Campaign',
+    'Bedele Beer Advertising Campaign',
+    'Belayab Motor Car TV Advertisement',
+    'Alphamale Men’s Clothing Brand Ambassador Campaign',
+    'Kuku Sebsibe – Dejazmach Music Video',
+    'Multiple TV and Digital Advertising Campaigns'
+  ],
+
+  achievements: [
+    'Ethiopian Next Top Model 2024 First Runner-Up',
+    'Winner – Best Outfit Award at the 9th Oda Awards 2025',
+    'Featured in 15+ professional music videos',
+    'Recognized fashion show performer and modeling coach',
+    'Successful brand ambassador and commercial model'
+  ],
+
+  entrepreneurship: 'Founder and CEO of Nexus Modeling School & Management, dedicated to developing professional models, empowering young talent, and advancing Ethiopia’s fashion and modeling industry through world-class training and management services.',
+
+  skills: [
+    'Runway Modeling',
+    'Fashion Show Performance',
+    'Commercial Modeling',
+    'Editorial Modeling',
+    'Brand Ambassadorship',
+    'Acting',
+    'Facial Expressions',
+    'Body Language',
+    'Public Speaking',
+    'Model Coaching',
+    'Fashion Presentation',
+    'Team Collaboration',
+    'Communication Skills'
+  ],
+
+  location: 'Addis Ababa, Ethiopia'
+}
     },
     { 
       name: 'Coach Hibist', 
