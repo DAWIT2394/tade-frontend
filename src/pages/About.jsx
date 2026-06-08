@@ -433,9 +433,9 @@ const About = () => {
       role: 'Model | Founder & CEO | Pageant Judge', 
       photo: tadeImage,
       icon: '👑', 
-      desc: 'Professional Model with 8+ years of international experience. Specializes in high fashion and commercial modeling.',
+      desc: 'Professional Model with 6+ years of international experience. Specializes in high fashion and commercial modeling.',
       specialties: ['Runway', 'Editorial', 'Brand Endorsements'],
-      experience: '8+ Years',
+      experience: '6+ Years',
       profile: {
         personalInfo: {
           
@@ -445,7 +445,7 @@ const About = () => {
           'International Runway Model - Milan Fashion Week 2022-2024',
           'Brand Ambassador for multiple international luxury brands',
           'Featured in top fashion magazines including Vogue Italia and Harper\'s Bazaar',
-          '8+ years of professional modeling experience across 12 countries',
+          '6+ years of professional modeling experience across 12 countries',
           'Walked for renowned designers including Armani, Versace, and Gucci',
           'Commercial campaigns for global brands in Dubai, Paris, and New York'
         ],
@@ -474,9 +474,9 @@ const About = () => {
       role: 'Head Trainer & Runway Coach', 
       photo: hibistImage,
       icon: '👩‍🎨', 
-      desc: 'Former international runway model with 10+ years of experience. Trained over 300 successful models.',
+      desc: 'Former international runway model with 3+ years of experience. Trained over 300 successful models.',
       specialties: ['Catwalk', 'Posture', 'Stage Presence'],
-      experience: '10+ Years',
+      experience: '3+ Years',
       profile: {
         personalInfo: {
           
@@ -484,7 +484,7 @@ const About = () => {
         intro: 'Former international runway model with a decade of experience walking for top designers across Europe, Asia, and Africa. Passionate about nurturing new talent and helping aspiring models achieve their dreams through proper technique and confidence building.',
         experience: [
           'Former Model - Paris Fashion Week (2014-2022)',
-          'Runway Coach for 10+ years across 3 continents',
+          'Runway Coach for 3+ years across 3 continents',
           'Trained over 300 successful models, 50+ now working internationally',
           'International modeling competition winner - Paris 2015',
           'Worked with top photographers and designers globally',
