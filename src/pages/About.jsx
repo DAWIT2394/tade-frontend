@@ -432,66 +432,21 @@ const About = () => {
       name: 'TADELE BALCHA WOLDE', 
       role: 'Model | Founder & CEO | Pageant Judge', 
       photo: tadeImage,
-      icon: '👑',
-      experience: '6+ Years',
-      profile: {
-        intro: 'Professional fashion model based in Ethiopia with 6+ years of experience in runway shows, fashion weeks, commercial campaigns, billboard advertisements, music videos, films, and brand collaborations. Ethiopian Next Top Model 2024 First Runner Up Winner. Founder & CEO of Nexus Modeling School & Management.',
-        experience: [
-          'Ethiopian Next Top Model 2024 - First Runner Up Winner',
-          'The 9th Oda Awards Best Outfit Winner 2025',
-          'Modeling Coach at New Hub Modeling & Nexus Modeling School & Management - Stage Fashion Show specialist',
-          '15+ Music Video Main Cast - Featured as lead cast member',
-          'Cinema, Films & Short Movies - Portrayed diverse characters',
-          'Billboard Photo Shoot Advertising - Safaricom, CBE campaigns',
-          'Bedele Beer Advertising - Multiple media channels',
-          'TV Advertising - Banking, soaps, spas, and various industries'
-        ],
-        pageantJudgment: [
-          'Miss Tourism Oromia 2025',
-          'Miss Irrecha 2025',
-          'Miss Bishofitu 2025'
-        ],
-        campaigns: [
-          'Safaricom Video & Billboard Campaign',
-          'CBE Billboard Advertising',
-          'Belayab Motor Car TV AD',
-          'Kuku Sebsibe Dejazimach Clip',
-          'Alphamale Men\'s Clothing - Brand Ambassador (6 Months)'
-        ],
-        entrepreneurship: 'Founder & CEO of Nexus Modeling School & Management - Established and manages Ethiopia\'s premier modeling institution focused on professional modeling training, talent casting, event management, art management, and production services.',
-        skills: ['Runway Modeling', 'Commercial Modeling', 'Editorial Modeling', 'Brand Ambassador', 'Acting', 'Pageant Judge', 'Fashion Campaigns', 'Creative Collaboration', 'Social Media Promotion', 'Modeling Coach'],
-        location: 'Addis Ababa, Ayat Area, Ethiopia',
-        personalInfo: {
-          // 'Date of Birth': 'June 19, 2000',
-          // 'Height': '187 cm',
-          // 'Age': '26',
-          // 'Nationality': 'Ethiopia 🇪🇹'
-        }
-      }
+      icon: '👑', 
+      desc: 'Professional Model with 8+ years of international experience. Specializes in high fashion and commercial modeling.',
+      specialties: ['Runway', 'Editorial', 'Brand Endorsements']
     },
     { 
-      name: 'HIBIST DERSO', 
-      role: 'Model | Coach', 
+      name: 'Coach Hibist', 
+      role: 'Head Trainer & Runway Coach', 
       photo: hibistImage,
-      icon: '👩‍🎨',
-      experience: '3+ Years',
-      profile: {
-        intro: 'Professional fashion model based in Ethiopia with 3+ years of experience in runway shows, fashion weeks, commercial campaigns, billboard advertisements, and brand collaborations. Passionate about fashion, creativity, and storytelling through visual media. Founder of the jewelry brand Netela.',
-        experience: [
-          'African sourcing Fashion Week (AFSW) - Walked for leading designers and brands',
-          'Hub of Africa Fashion Week (HAFW) - Participated in one of Africa\'s most recognized fashion platforms',
-          'GTCO Fashion Week - Selected for international fashion week experience in Nigeria',
-          'GTCO Fashion Weekend - Featured as a model at one of Africa\'s largest fashion events'
-        ],
-        campaigns: [
-          'Ethio Telecom - Featured in billboard advertising campaigns',
-          'Dorga Hair Oil - Modeled for commercial and promotional photoshoots'
-        ],
-        entrepreneurship: 'Founder & Owner of Netela Jewelry - Established and manages a jewelry brand focused on unique and stylish accessories. Involved in brand development, creative direction, product promotion, and marketing.',
-        skills: ['Runway Modeling', 'Commercial Modeling', 'Editorial Modeling', 'Brand Representation', 'Fashion Campaigns', 'Creative Collaboration', 'Social Media Promotion'],
-        location: 'Addis Ababa, Ethiopia'
-      }
+      icon: '👩‍🎨', 
+      desc: 'Former international runway model with 10+ years of experience. Trained over 300 successful models.',
+      specialties: ['Catwalk', 'Posture', 'Stage Presence']
     },
+ 
+  
+ 
   ];
 
   return (
@@ -854,7 +809,7 @@ const About = () => {
       {/* Contact Information */}
       <div style={styles.contactInfo}>
         <p style={styles.contactText}>📞 For inquiries and admissions</p>
-        <p style={styles.contactNumber}>+251940848080</p>
+        <p style={styles.contactNumber}>+25192 257 2652</p>
         <p style={{ ...styles.contactText, marginTop: '10px', fontSize: '14px' }}>
           📍 Ayat, Addis Ababa, Ethiopia | ✉️ tademan562@gmail.com
         </p>
