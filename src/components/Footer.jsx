@@ -20,7 +20,7 @@ const Footer = () => {
     },
     {
       name: "Instagram",
-      url: "https://www.instagram.com/official_tade_12?igsh=dXFzdGRkMzJwMGw2&utm_source=qr",
+      url: ":https://www.instagram.com/nexus_modeling_school_manag?igsh=bGhwM2FkcG1yODY2",
       icon: "📷",
       color: "#e4405f"
     },
