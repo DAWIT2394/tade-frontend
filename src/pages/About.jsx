@@ -437,6 +437,13 @@ const About = () => {
       specialties: ['Runway', 'Editorial', 'Brand Endorsements'],
       experience: '6+ Years',
      profile: {
+
+      personalInfo: {
+  instagram: {
+    username: '@official_tade_12',
+    url: 'https://www.instagram.com/official_tade_12'
+  }
+},
  
 
   intro: 'Professional Ethiopian model, actor, modeling coach, and entrepreneur with extensive experience in fashion shows, television commercials, billboard campaigns, music videos, films, and brand ambassador roles. Ethiopian Next Top Model 2024 First Runner-Up and Founder & CEO of Nexus Modeling School & Management.',
@@ -497,6 +504,8 @@ const About = () => {
   ],
 
   location: 'Addis Ababa, Ethiopia'
+
+  
 }
     },
     { 
@@ -508,7 +517,13 @@ const About = () => {
       specialties: ['Catwalk', 'Posture', 'Stage Presence'],
       experience: '3+ Years',
 profile: {
-  personalInfo: {},
+personalInfo: {
+  instagram: {
+    username: '@hibi5d',
+    url: 'https://www.instagram.com/hibi5d'
+  }
+},
+  
 
   intro: 'Professional fashion model based in Ethiopia with extensive experience in runway shows, fashion weeks, commercial campaigns, billboard advertisements, and brand collaborations. Passionate about fashion, creativity, and storytelling through visual media. Founder and owner of the jewelry brand Netela.',
 
