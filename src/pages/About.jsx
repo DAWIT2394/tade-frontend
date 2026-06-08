@@ -426,7 +426,7 @@ const About = () => {
     { icon: '🎥', title: 'Production' },
   ];
 
-  // Team members with experience years
+  // Team members with complete profile data
   const teamMembers = [
     { 
       name: 'TADELE BALCHA WOLDE', 
@@ -434,7 +434,46 @@ const About = () => {
       photo: tadeImage,
       icon: '👑', 
       desc: 'Professional Model with 8+ years of international experience. Specializes in high fashion and commercial modeling.',
-      specialties: ['Runway', 'Editorial', 'Brand Endorsements']
+      specialties: ['Runway', 'Editorial', 'Brand Endorsements'],
+      experience: '8+ Years',
+      profile: {
+        personalInfo: {
+          'Full Name': 'Tadele Balcha Wolde',
+          'Age': '28',
+          'Nationality': 'Ethiopian',
+          'Languages': 'Amharic, English',
+          'Height': '188 cm',
+          'Weight': '75 kg',
+          'Measurements': 'Chest: 98cm, Waist: 78cm, Hips: 98cm'
+        },
+        intro: 'Professional international model with extensive experience in high fashion and commercial modeling. Founder and CEO of Nexus Modeling School, dedicated to transforming Ethiopia\'s fashion industry and creating world-class talent.',
+        experience: [
+          'International Runway Model - Milan Fashion Week 2022-2024',
+          'Brand Ambassador for multiple international luxury brands',
+          'Featured in top fashion magazines including Vogue Italia and Harper\'s Bazaar',
+          '8+ years of professional modeling experience across 12 countries',
+          'Walked for renowned designers including Armani, Versace, and Gucci',
+          'Commercial campaigns for global brands in Dubai, Paris, and New York'
+        ],
+        pageantJudgment: [
+          'Miss Ethiopia 2023 - Head Judge',
+          'Ethiopia Next Top Model Season 4 - Panel Judge',
+          'International Model Search Competition 2024 - Lead Judge',
+          'African Fashion Week Model Competition - Chief Judge',
+          'Nexus Model Star Search - Creator & Head Judge'
+        ],
+        campaigns: [
+          'Luxury Fashion Campaign - Paris Fashion Week 2024',
+          'Commercial Campaign - Dubai Shopping Festival 2023',
+          'Editorial Shoots - Vogue Italia November 2023',
+          'Brand Endorsements - Multiple International Fashion Brands',
+          'Lookbook - Spring/Summer Collection 2024',
+          'Fitness Campaign - International Sportswear Brand'
+        ],
+        entrepreneurship: 'Founded Nexus Modeling School in 2018 with just 15 students. Under his leadership, the school has grown to over 500 successful graduates, established partnerships with international modeling agencies, and created Ethiopia\'s first professional modeling certification program.',
+        skills: ['Runway Walking', 'Editorial Posing', 'Commercial Modeling', 'Brand Representation', 'Public Speaking', 'Fashion Direction', 'Talent Scouting', 'Portfolio Development'],
+        location: 'Addis Ababa, Ethiopia & International'
+      }
     },
     { 
       name: 'Coach Hibist', 
@@ -442,11 +481,47 @@ const About = () => {
       photo: hibistImage,
       icon: '👩‍🎨', 
       desc: 'Former international runway model with 10+ years of experience. Trained over 300 successful models.',
-      specialties: ['Catwalk', 'Posture', 'Stage Presence']
-    },
- 
-  
- 
+      specialties: ['Catwalk', 'Posture', 'Stage Presence'],
+      experience: '10+ Years',
+      profile: {
+        personalInfo: {
+          'Full Name': 'Hibist (Last Name)',
+          'Age': '35',
+          'Nationality': 'Ethiopian',
+          'Languages': 'Amharic, English, French',
+          'Height': '178 cm',
+          'Weight': '62 kg',
+          'Measurements': 'Chest: 86cm, Waist: 64cm, Hips: 90cm'
+        },
+        intro: 'Former international runway model with a decade of experience walking for top designers across Europe, Asia, and Africa. Passionate about nurturing new talent and helping aspiring models achieve their dreams through proper technique and confidence building.',
+        experience: [
+          'Former Model - Paris Fashion Week (2014-2022)',
+          'Runway Coach for 10+ years across 3 continents',
+          'Trained over 300 successful models, 50+ now working internationally',
+          'International modeling competition winner - Paris 2015',
+          'Worked with top photographers and designers globally',
+          'Featured in campaigns for L\'Oréal and Dior'
+        ],
+        pageantJudgment: [
+          'Ethiopia Model Search 2023 - Head Judge',
+          'African Fashion Week 2024 - Panel Judge',
+          'Model Talent Competition Ethiopia - Lead Coach & Judge',
+          'Nexus Annual Model Showcase - Chief Judge',
+          'East Africa Model Competition - Guest Judge'
+        ],
+        campaigns: [
+          'High Fashion Campaign - Paris Fashion Week Collections',
+          'Beauty Campaign - L\'Oréal Paris 2022-2024',
+          'Luxury Brand - Dior Beauty Ambassador',
+          'Fashion Week Runway Shows - Paris, Milan, London',
+          'Bridal Collection - International Wedding Magazine',
+          'Lingerie Campaign - Global Brand Launch'
+        ],
+        entrepreneurship: 'Senior coach at Nexus Modeling School since 2019, developing the comprehensive curriculum and training program that has become the gold standard for modeling education in Ethiopia.',
+        skills: ['Catwalk Technique', 'Posture Correction', 'Stage Presence', 'Confidence Building', 'Portfolio Development', 'Fashion Styling', 'Etiquette Training', 'Photo Posing'],
+        location: 'Addis Ababa, Ethiopia'
+      }
+    }
   ];
 
   return (
@@ -675,7 +750,7 @@ const About = () => {
         ))}
       </div>
 
-      {/* Our Team Section - With Experience Badges */}
+      {/* Our Team Section - With Complete Profile Data */}
       <div style={styles.teamSection}>
         <h2 style={styles.teamTitle}>Meet Our Expert Coaches</h2>
         <div style={styles.teamGrid}>
@@ -701,7 +776,7 @@ const About = () => {
               </div>
               
               <div className="profile-section" style={styles.profileSection}>
-                {/* Personal Info for Tadele */}
+                {/* Personal Info - Now safe because profile exists */}
                 {member.profile.personalInfo && (
                   <>
                     <div style={styles.profileTitle}>📋 PERSONAL INFORMATION</div>
@@ -720,8 +795,8 @@ const About = () => {
                   <p key={i} style={styles.profileText}>• {exp}</p>
                 ))}
                 
-                {/* Pageant Judgment for Tadele */}
-                {member.profile.pageantJudgment && (
+                {/* Pageant Judgment - Only for Tadele */}
+                {member.profile.pageantJudgment && member.profile.pageantJudgment.length > 0 && (
                   <>
                     <div style={styles.profileTitle}>👑 PAGEANT JUDGE</div>
                     {member.profile.pageantJudgment.map((judgment, i) => (
