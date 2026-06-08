@@ -1,7 +1,7 @@
 import {  useState } from 'react';
 
 // Import images from local folder
-import g1 from '../assets/g1.JPG';
+// import g1 from '../assets/g1.JPG';
 import g2 from '../assets/g2.JPG';
 import g3 from '../assets/g3.PNG';
 import g4 from '../assets/g4.JPG';
@@ -17,7 +17,7 @@ import g13 from '../assets/g13.PNG';
 import g15 from '../assets/g15.JPG';
 // Local gallery data with imported images - defined outside component
 const SAMPLE_GALLERY = [
-  { id: 1, image: g1, title: 'Runway Training Session', category: 'training' },
+  // { id: 1, image: g1, title: 'Runway Training Session', category: 'training' },
   { id: 2, image: g2, title: 'Fashion Show 2023', category: 'event' },
   { id: 3, image: g3, title: 'Graduation Ceremony', category: 'graduation' },
   { id: 4, image: g4, title: 'Professional Photo Shoot', category: 'photoshoot' },
