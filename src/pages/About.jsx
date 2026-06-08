@@ -513,13 +513,7 @@ const About = () => {
       specialties: ['Catwalk', 'Posture', 'Stage Presence'],
       experience: '3+ Years',
 profile: {
-  personalInfo: {
-    fullName: 'Hibist Derso',
-    instagram: {
-      username: '@hibi5d',
-      url: 'https://www.instagram.com/hibi5d'
-    }
-  },
+  personalInfo: {},
 
   intro: 'Professional fashion model based in Ethiopia with extensive experience in runway shows, fashion weeks, commercial campaigns, billboard advertisements, and brand collaborations. Passionate about fashion, creativity, and storytelling through visual media. Founder and owner of the jewelry brand Netela.',
 
@@ -565,7 +559,7 @@ profile: {
   ],
 
   location: 'Addis Ababa, Ethiopia'
-}   }
+}    }
   ];
 
   return (
