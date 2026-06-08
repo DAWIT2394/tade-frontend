@@ -884,7 +884,7 @@ const About = () => {
       {/* Contact Information */}
       <div style={styles.contactInfo}>
         <p style={styles.contactText}>📞 For inquiries and admissions</p>
-        <p style={styles.contactNumber}>+25192 257 2652</p>
+        <p style={styles.contactNumber}>+251940848080</p>
         <p style={{ ...styles.contactText, marginTop: '10px', fontSize: '14px' }}>
           📍 Ayat, Addis Ababa, Ethiopia | ✉️ tademan562@gmail.com
         </p>
