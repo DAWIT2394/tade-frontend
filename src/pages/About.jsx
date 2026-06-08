@@ -500,7 +500,7 @@ const About = () => {
 }
     },
     { 
-      name: 'Coach Hibist', 
+      name: 'Coach HIBIST DERSO', 
       role: 'Head Trainer & Runway Coach', 
       photo: hibistImage,
       icon: '👩‍🎨', 
@@ -702,7 +702,7 @@ profile: {
         <div style={styles.logoIcon}>👣</div>
         <h1 style={styles.title}>Nexus Modeling School & Management</h1>
         <p style={styles.subtitle}>
-          EEthiopia's premier institution for professional modeling education, 
+          Ethiopia's premier institution for professional modeling education, 
           empowering dreams and shaping the future of fashion since 2018
         </p>
       </div>
