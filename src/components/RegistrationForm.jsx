@@ -938,7 +938,7 @@ const RegistrationForm = () => {
         paddingTop: '20px'
       }}>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-          <span>📞 +25192 257 2652</span>
+          <span>📞 +251940848080</span>
           <span>📸 Profile Photo Required</span>
           <span>🎓 Limited Seats Available</span>
         </div>

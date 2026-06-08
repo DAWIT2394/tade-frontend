@@ -514,6 +514,7 @@ const About = () => {
       experience: '3+ Years',
 profile: {
   personalInfo: {
+    fullName: 'Hibist Derso',
     instagram: {
       username: '@hibi5d',
       url: 'https://www.instagram.com/hibi5d'
