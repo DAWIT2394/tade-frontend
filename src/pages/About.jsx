@@ -438,13 +438,7 @@ const About = () => {
       experience: '8+ Years',
       profile: {
         personalInfo: {
-          'Full Name': 'Tadele Balcha Wolde',
-          'Age': '28',
-          'Nationality': 'Ethiopian',
-          'Languages': 'Amharic, English',
-          'Height': '188 cm',
-          'Weight': '75 kg',
-          'Measurements': 'Chest: 98cm, Waist: 78cm, Hips: 98cm'
+          
         },
         intro: 'Professional international model with extensive experience in high fashion and commercial modeling. Founder and CEO of Nexus Modeling School, dedicated to transforming Ethiopia\'s fashion industry and creating world-class talent.',
         experience: [
@@ -485,13 +479,7 @@ const About = () => {
       experience: '10+ Years',
       profile: {
         personalInfo: {
-          'Full Name': 'Hibist (Last Name)',
-          'Age': '35',
-          'Nationality': 'Ethiopian',
-          'Languages': 'Amharic, English, French',
-          'Height': '178 cm',
-          'Weight': '62 kg',
-          'Measurements': 'Chest: 86cm, Waist: 64cm, Hips: 90cm'
+          
         },
         intro: 'Former international runway model with a decade of experience walking for top designers across Europe, Asia, and Africa. Passionate about nurturing new talent and helping aspiring models achieve their dreams through proper technique and confidence building.',
         experience: [
