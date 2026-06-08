@@ -7,8 +7,8 @@ const Contact = () => {
           Have questions? We'd love to hear from you.
         </p>
         <div className="text-center space-y-4">
-          <p><strong>Email:</strong> hello@edulearn.com</p>
-          <p><strong>Phone:</strong> +25192 257 2652</p>
+          <p><strong>Email:</strong> info@nexusmodling.com</p>
+          <p><strong>Phone:</strong> +251940848080</p>
         </div>
       </div>
     </div>

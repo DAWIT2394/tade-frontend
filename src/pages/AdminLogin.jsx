@@ -309,7 +309,7 @@ const AdminLogin = () => {
         </div>
 
         <div style={styles.contactInfo}>
-          <p>📞 Need help? Call +25192 257 2652</p>
+          <p>📞 Need help? Call +251940848080</p>
           <p style={{ marginTop: '5px' }}>© 2024 Nexus Modeling School. All rights reserved.</p>
         </div>
       </div>

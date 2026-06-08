@@ -1,12 +1,11 @@
-import { useEffect, useState, useCallback } from 'react';
-import { getGallery } from '../services/api';
+import {  useState } from 'react';
 
 // Import images from local folder
-import g1 from '../assets/g1.jpg';
+import g1 from '../assets/g1.JPG';
 import g2 from '../assets/g2.JPG';
-import g3 from '../assets/g3.JPG';
+import g3 from '../assets/g3.PNG';
 import g4 from '../assets/g4.JPG';
-import g5 from '../assets/g5.JPG';
+import g5 from '../assets/g5.PNG';
 import g6 from '../assets/g6.JPG';
 import g7 from '../assets/g7.JPG';
 import g8 from '../assets/g8.PNG';
@@ -14,7 +13,8 @@ import g9 from '../assets/g9.JPG';
 import g10 from '../assets/g10.JPG';
 import g11 from '../assets/g11.JPG';
 import g12 from '../assets/g12.JPG';
-
+import g13 from '../assets/g13.PNG';
+import g15 from '../assets/g15.JPG';
 // Local gallery data with imported images - defined outside component
 const SAMPLE_GALLERY = [
   { id: 1, image: g1, title: 'Runway Training Session', category: 'training' },
@@ -29,34 +29,17 @@ const SAMPLE_GALLERY = [
   { id: 10, image: g10, title: 'Posing Masterclass', category: 'workshop' },
   { id: 11, image: g11, title: 'Catwalk Practice', category: 'training' },
   { id: 12, image: g12, title: 'Magazine Cover Shoot', category: 'photoshoot' },
+  { id: 13, image: g13, title: 'Editorial Photo Shoot', category: 'photoshoot' },
+  { id: 15, image: g15, title: 'Talent Development', category: 'training' },  
 ];
 
+
 const Gallery = () => {
-  const [gallery, setGallery] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [gallery] = useState(SAMPLE_GALLERY);
   const [filter, setFilter] = useState('all');
+  const [selectedImage, setSelectedImage] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
-
-  const loadGallery = useCallback(async () => {
-    try {
-      const res = await getGallery();
-      if (res.data && res.data.length > 0) {
-        setGallery(res.data);
-      } else {
-        setGallery(SAMPLE_GALLERY);
-      }
-    } catch (err) {
-      console.error('Error loading gallery:', err);
-      setGallery(SAMPLE_GALLERY);
-    } finally {
-      setLoading(false);
-    }
-  }, []); // No dependencies needed since SAMPLE_GALLERY is defined outside component
-
-  useEffect(() => {
-    loadGallery();
-  }, [loadGallery]);
+  const [loading] = useState(false);                      
 
   const displayGallery = gallery;
 
@@ -75,9 +58,9 @@ const Gallery = () => {
 
   const styles = {
     container: {
-      maxWidth: '1280px',
+      maxWidth: '1290px',
       margin: '0 auto',
-      padding: '60px 24px',
+      padding: '60px 20px',
       animation: 'fadeIn 0.6s ease-out',
     },
     header: {
@@ -155,7 +138,7 @@ const Gallery = () => {
       borderRadius: '16px',
       overflow: 'hidden',
       cursor: 'pointer',
-      height: '280px',
+      height: '420px',
       boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
       backgroundColor: '#f3f4f6',
@@ -345,7 +328,7 @@ const Gallery = () => {
               gap: 16px !important;
             }
             .gallery-card {
-              height: 250px !important;
+              height: 300px !important;
             }
           }
           
@@ -354,7 +337,7 @@ const Gallery = () => {
               grid-template-columns: 1fr !important;
             }
             .gallery-card {
-              height: 280px !important;
+              height: 400px !important;
             }
           }
         `}
@@ -486,7 +469,7 @@ const Gallery = () => {
         borderRadius: '16px',
       }}>
         <p style={{ color: '#6b7280', fontSize: '14px' }}>
-          📸 Follow us on social media for more updates | 📞 <strong style={{ color: '#ec4899' }}>+25192 257 2652</strong>
+          📸 Follow us on social media for more updates | 📞 <strong style={{ color: '#ec4899' }}>+251940848080</strong>
         </p>
       </div>
 

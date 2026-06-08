@@ -154,7 +154,7 @@ const Footer = () => {
               <p>Ethiopia's premier institution for professional modeling education, empowering dreams since 2018.</p>
               <p style={{ marginTop: "10px" }}>
                 📍 Addis Ababa, Ethiopia<br />
-                📞 +251 92 257 2652<br />
+                📞 +251 940848080<br />
                 ✉️ info@nexusmodeling.com
               </p>
             </div>
@@ -195,7 +195,7 @@ const Footer = () => {
                 አያት አደባባይ ወርድ ብሎ ዙርያሽ ሞል ፍት ለፍት ለሚ ኩራ ክ/ከተማ ጋር
               </p>
               <p style={{ fontSize: "11px", color: "#ec4899", marginTop: "8px" }}>
-                📞 ለበለጠ መረጃ: 0940848080
+                📞 ለበለጠ መረጃ: 940848080
               </p>
             </div>
           </div>

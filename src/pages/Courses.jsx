@@ -90,6 +90,12 @@ const Courses = () => {
       color: '#1f2937',
       marginBottom: '8px',
     },
+    courseDescription: {
+      fontSize: '14px',
+      color: '#6b7280',
+      marginBottom: '8px',
+      lineHeight: '1.5',
+    },
     courseDetails: {
       display: 'flex',
       gap: '20px',
@@ -152,13 +158,69 @@ const Courses = () => {
   };
 
   const courses = [
-    { id: 1, title: 'High Fashion Model & Editorial', icon: '👗', duration: '6-10 Months', price: '₿ 48,000', color: '#ec4899' },
-    { id: 2, title: 'Runway/Catwalk Model', icon: '👠', duration: '4-8 Months', price: '₿ 35,000', color: '#f59e0b' },
-    { id: 3, title: 'Commercial Model', icon: '📺', duration: '3-6 Months', price: '₿ 28,000', color: '#3b82f6' },
-    { id: 4, title: 'Photo Model', icon: '📸', duration: '3-6 Months', price: '₿ 25,000', color: '#8b5cf6' },
-    { id: 5, title: 'Fitness Model', icon: '💪', duration: '4-8 Months', price: '₿ 32,000', color: '#10b981' },
-    { id: 6, title: 'Plus Size & Curve Model', icon: '👑', duration: '4-8 Months', price: '₿ 30,000', color: '#ef4444' },
-    { id: 7, title: 'Parts Model', icon: '🖐️', duration: '2-4 Months', price: '₿ 18,000', color: '#a855f7' },
+    { 
+      id: 1, 
+      title: 'High Fashion Model & Editorial', 
+      icon: '👗', 
+      duration: '6-10 Months', 
+      price: '₿ 48,000', 
+      color: '#ec4899',
+      description: 'Master high-fashion poses, expressions, and editorial techniques for top magazines and designers.'
+    },
+    { 
+      id: 2, 
+      title: 'Runway/Catwalk Model', 
+      icon: '👠', 
+      duration: '4-8 Months', 
+      price: '₿ 35,000', 
+      color: '#f59e0b',
+      description: 'Perfect your walk, posture, and stage presence for international fashion weeks and shows.'
+    },
+    { 
+      id: 3, 
+      title: 'Commercial Model', 
+      icon: '📺', 
+      duration: '3-6 Months', 
+      price: '₿ 28,000', 
+      color: '#3b82f6',
+      description: 'Learn versatile modeling for TV commercials, print ads, catalogs, and brand campaigns.'
+    },
+    { 
+      id: 4, 
+      title: 'Photo Model', 
+      icon: '📸', 
+      duration: '3-6 Months', 
+      price: '₿ 25,000', 
+      color: '#8b5cf6',
+      description: 'Master lighting, angles, and expressions for stunning portfolio and fashion photography.'
+    },
+    { 
+      id: 5, 
+      title: 'Fitness Model', 
+      icon: '💪', 
+      duration: '4-8 Months', 
+      price: '₿ 32,000', 
+      color: '#10b981',
+      description: 'Combine fitness training with modeling for athletic brands, fitness magazines, and sportswear.'
+    },
+    { 
+      id: 6, 
+      title: 'Plus Size & Curve Model', 
+      icon: '👑', 
+      duration: '4-8 Months', 
+      price: '₿ 30,000', 
+      color: '#ef4444',
+      description: 'Embrace body diversity and excel in curve modeling for inclusive fashion brands.'
+    },
+    { 
+      id: 7, 
+      title: 'Parts Model', 
+      icon: '🖐️', 
+      duration: '2-4 Months', 
+      price: '₿ 18,000', 
+      color: '#a855f7',
+      description: 'Specialize in hands, feet, or other features for jewelry, cosmetics, and product ads.'
+    },
   ];
 
   const [hoveredCourse, setHoveredCourse] = useState(null);
@@ -223,6 +285,7 @@ const Courses = () => {
               <div style={styles.courseIcon}>{course.icon}</div>
               <div style={styles.courseInfo}>
                 <h3 style={styles.courseTitle}>{course.title}</h3>
+                <div style={styles.courseDescription}>{course.description}</div>
                 <div style={styles.courseDetails}>
                   <span style={styles.courseDuration}>{course.duration}</span>
                   <span style={styles.coursePrice}>{course.price}</span>
@@ -259,7 +322,7 @@ const Courses = () => {
       {/* Contact Info */}
       <div style={styles.contactInfo}>
         <p style={{ color: '#6b7280', fontSize: '14px' }}>
-          📞 For questions about our specializations, call us: <strong style={{ color: '#ec4899' }}>+25192 257 2652</strong>
+          📞 For questions about our specializations, call us: <strong style={{ color: '#ec4899' }}>+251940848080</strong>
         </p>
         <p style={{ color: '#9ca3af', fontSize: '12px', marginTop: '8px' }}>
           Flexible payment plans available | Scholarships for exceptional talent | Free career consultation
