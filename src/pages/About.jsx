@@ -436,73 +436,65 @@ const About = () => {
       desc: 'Professional Model with 6+ years of international experience. Specializes in high fashion and commercial modeling.',
       specialties: ['Runway', 'Editorial', 'Brand Endorsements'],
       experience: '6+ Years',
- profile: {
-  personalInfo: {
-    instagram: {
-      username: '@official_tade_12',
-      url: 'https://www.instagram.com/official_tade_12'
-    }
-  },
-
-  intro: 'Professional Ethiopian model, actor, modeling coach, and entrepreneur with extensive experience in fashion shows, television commercials, billboard campaigns, music videos, films, and brand ambassador roles. Ethiopian Next Top Model 2024 First Runner-Up and Founder & CEO of Nexus Modeling School & Management.',
-
-  experience: [
-    'Ethiopian Next Top Model 2024 – First Runner-Up Winner',
-    'Modeling Coach at New Hub Modeling and Nexus Modeling School & Management',
-    'Performed in numerous stage fashion shows across Ethiopia',
-    'Main cast in 15+ music videos',
-    'Actor in films, cinema productions, and short movies',
-    'Featured in major billboard advertising campaigns',
-    'Participated in television advertisements for banking, soap, spa, and lifestyle brands',
-    'Brand Ambassador for Alphamale Men’s Clothing for 6 months',
-    'Worked with photographers, directors, fashion designers, and advertising agencies'
-  ],
-
-  pageantJudgment: [
-    'Miss Tourism Oromia 2025 – Judge',
-    'Miss Irreecha 2025 – Judge',
-    'Miss Bishoftu 2025 – Judge'
-  ],
-
-  campaigns: [
-    'Safaricom Ethiopia Billboard Campaign',
-    'Safaricom Ethiopia Video Commercial',
-    'Commercial Bank of Ethiopia (CBE) Billboard Campaign',
-    'Bedele Beer Advertising Campaign',
-    'Belayab Motor Car TV Advertisement',
-    'Alphamale Men’s Clothing Brand Ambassador Campaign',
-    'Kuku Sebsibe – Dejazmach Music Video',
-    'Multiple TV and Digital Advertising Campaigns'
-  ],
-
-  achievements: [
-    'Ethiopian Next Top Model 2024 First Runner-Up',
-    'Winner – Best Outfit Award at the 9th Oda Awards 2025',
-    'Featured in 15+ professional music videos',
-    'Recognized fashion show performer and modeling coach',
-    'Successful brand ambassador and commercial model'
-  ],
-
-  entrepreneurship: 'Founder and CEO of Nexus Modeling School & Management, dedicated to developing professional models, empowering young talent, and advancing Ethiopia’s fashion and modeling industry through world-class training and management services.',
-
-  skills: [
-    'Runway Modeling',
-    'Fashion Show Performance',
-    'Commercial Modeling',
-    'Editorial Modeling',
-    'Brand Ambassadorship',
-    'Acting',
-    'Facial Expressions',
-    'Body Language',
-    'Public Speaking',
-    'Model Coaching',
-    'Fashion Presentation',
-    'Team Collaboration',
-    'Communication Skills'
-  ],
-
-  location: 'Addis Ababa, Ethiopia'
-}
+      profile: {
+        personalInfo: {
+          instagram: {
+            username: '@official_tade_12',
+            url: 'https://www.instagram.com/official_tade_12'
+          }
+        },
+        intro: 'Professional Ethiopian model, actor, modeling coach, and entrepreneur with extensive experience in fashion shows, television commercials, billboard campaigns, music videos, films, and brand ambassador roles. Ethiopian Next Top Model 2024 First Runner-Up and Founder & CEO of Nexus Modeling School & Management.',
+        experience: [
+          'Ethiopian Next Top Model 2024 – First Runner-Up Winner',
+          'Modeling Coach at New Hub Modeling and Nexus Modeling School & Management',
+          'Performed in numerous stage fashion shows across Ethiopia',
+          'Main cast in 15+ music videos',
+          'Actor in films, cinema productions, and short movies',
+          'Featured in major billboard advertising campaigns',
+          'Participated in television advertisements for banking, soap, spa, and lifestyle brands',
+          'Brand Ambassador for Alphamale Men\'s Clothing for 6 months',
+          'Worked with photographers, directors, fashion designers, and advertising agencies'
+        ],
+        pageantJudgment: [
+          'Miss Tourism Oromia 2025 – Judge',
+          'Miss Irreecha 2025 – Judge',
+          'Miss Bishoftu 2025 – Judge'
+        ],
+        campaigns: [
+          'Safaricom Ethiopia Billboard Campaign',
+          'Safaricom Ethiopia Video Commercial',
+          'Commercial Bank of Ethiopia (CBE) Billboard Campaign',
+          'Bedele Beer Advertising Campaign',
+          'Belayab Motor Car TV Advertisement',
+          'Alphamale Men\'s Clothing Brand Ambassador Campaign',
+          'Kuku Sebsibe – Dejazmach Music Video',
+          'Multiple TV and Digital Advertising Campaigns'
+        ],
+        achievements: [
+          'Ethiopian Next Top Model 2024 First Runner-Up',
+          'Winner – Best Outfit Award at the 9th Oda Awards 2025',
+          'Featured in 15+ professional music videos',
+          'Recognized fashion show performer and modeling coach',
+          'Successful brand ambassador and commercial model'
+        ],
+        entrepreneurship: 'Founder and CEO of Nexus Modeling School & Management, dedicated to developing professional models, empowering young talent, and advancing Ethiopia\'s fashion and modeling industry through world-class training and management services.',
+        skills: [
+          'Runway Modeling',
+          'Fashion Show Performance',
+          'Commercial Modeling',
+          'Editorial Modeling',
+          'Brand Ambassadorship',
+          'Acting',
+          'Facial Expressions',
+          'Body Language',
+          'Public Speaking',
+          'Model Coaching',
+          'Fashion Presentation',
+          'Team Collaboration',
+          'Communication Skills'
+        ],
+        location: 'Addis Ababa, Ethiopia'
+      }
     },
     { 
       name: 'Coach HIBIST DERSO', 
@@ -512,54 +504,53 @@ const About = () => {
       desc: 'Former international runway model with 3+ years of experience. Trained over 300 successful models.',
       specialties: ['Catwalk', 'Posture', 'Stage Presence'],
       experience: '3+ Years',
-profile: {
-  personalInfo: {},
-
-  intro: 'Professional fashion model based in Ethiopia with extensive experience in runway shows, fashion weeks, commercial campaigns, billboard advertisements, and brand collaborations. Passionate about fashion, creativity, and storytelling through visual media. Founder and owner of the jewelry brand Netela.',
-
-  experience: [
-    'Model at African Sourcing Fashion Week (AFSW)',
-    'Runway model at Hub of Africa Fashion Week (HAFW)',
-    'Selected participant at GTCO Fashion Week, Nigeria',
-    'Featured model at GTCO Fashion Weekend',
-    'Appeared in Ethio Telecom billboard advertising campaigns',
-    'Modeled for Dorga Hair Oil commercial and promotional campaigns',
-    'Collaborated with leading Ethiopian fashion and lifestyle brands',
-    'Participated in fashion editorials, lookbooks, and creative campaigns'
-  ],
-
-  achievements: [
-    'Featured in major Ethiopian and international fashion events',
-    'Worked with renowned designers and fashion brands',
-    'Experienced in studio, outdoor, beauty, and commercial photography',
-    'Built a successful personal brand in the fashion industry',
-    'Founder of the Netela Jewelry brand'
-  ],
-
-  campaigns: [
-    'Ethio Telecom Billboard Advertising Campaign',
-    'Dorga Hair Oil Promotional Campaign',
-    'Fashion Editorial and Lookbook Productions',
-    'Creative Fashion Brand Collaborations',
-    'Commercial Photography Projects',
-    'Lifestyle and Beauty Campaigns'
-  ],
-
-  entrepreneurship: 'Founder and Owner of Netela Jewelry, a jewelry brand focused on unique and stylish accessories. Responsible for brand development, creative direction, product promotion, marketing, and business growth.',
-
-  skills: [
-    'Runway Modeling',
-    'Commercial Modeling',
-    'Editorial Modeling',
-    'Brand Representation',
-    'Fashion Campaigns',
-    'Creative Collaboration',
-    'Social Media Promotion',
-    'Fashion Presentation'
-  ],
-
-  location: 'Addis Ababa, Ethiopia'
-}    }
+       profile: {
+      personalInfo: {
+        instagram: {
+         username: '@hibi5d',
+          url: 'https://www.instagram.com/hibi5d?igsh=bjkwdXo5Nnd1czR5'
+        }
+      },
+        intro: 'Professional fashion model based in Ethiopia with extensive experience in runway shows, fashion weeks, commercial campaigns, billboard advertisements, and brand collaborations. Passionate about fashion, creativity, and storytelling through visual media. Founder and owner of the jewelry brand Netela.',
+        experience: [
+          'Model at African Sourcing Fashion Week (AFSW)',
+          'Runway model at Hub of Africa Fashion Week (HAFW)',
+          'Selected participant at GTCO Fashion Week, Nigeria',
+          'Featured model at GTCO Fashion Weekend',
+          'Appeared in Ethio Telecom billboard advertising campaigns',
+          'Modeled for Dorga Hair Oil commercial and promotional campaigns',
+          'Collaborated with leading Ethiopian fashion and lifestyle brands',
+          'Participated in fashion editorials, lookbooks, and creative campaigns'
+        ],
+        achievements: [
+          'Featured in major Ethiopian and international fashion events',
+          'Worked with renowned designers and fashion brands',
+          'Experienced in studio, outdoor, beauty, and commercial photography',
+          'Built a successful personal brand in the fashion industry',
+          'Founder of the Netela Jewelry brand'
+        ],
+        campaigns: [
+          'Ethio Telecom Billboard Advertising Campaign',
+          'Dorga Hair Oil Promotional Campaign',
+          'Fashion Editorial and Lookbook Productions',
+          'Creative Fashion Brand Collaborations',
+          'Commercial Photography Projects',
+          'Lifestyle and Beauty Campaigns'
+        ],
+        entrepreneurship: 'Founder and Owner of Netela Jewelry, a jewelry brand focused on unique and stylish accessories. Responsible for brand development, creative direction, product promotion, marketing, and business growth.',
+        skills: [
+          'Runway Modeling',
+          'Commercial Modeling',
+          'Editorial Modeling',
+          'Brand Representation',
+          'Fashion Campaigns',
+          'Creative Collaboration',
+          'Social Media Promotion',
+          'Fashion Presentation'
+        ],
+        location: 'Addis Ababa, Ethiopia'
+      }
+    }
   ];
 
   return (
@@ -814,13 +805,33 @@ profile: {
               </div>
               
               <div className="profile-section" style={styles.profileSection}>
-                {/* Personal Info - Now safe because profile exists */}
-                {member.profile.personalInfo && (
+                {/* Personal Info - Fixed rendering for nested objects */}
+                {member.profile.personalInfo && Object.keys(member.profile.personalInfo).length > 0 && (
                   <>
                     <div style={styles.profileTitle}>📋 PERSONAL INFORMATION</div>
-                    {Object.entries(member.profile.personalInfo).map(([key, value]) => (
-                      <p key={key} style={styles.profileText}><strong>{key}:</strong> {value}</p>
-                    ))}
+                    {Object.entries(member.profile.personalInfo).map(([key, value]) => {
+                      // Check if value is an object (like Instagram with url and username)
+                      if (typeof value === 'object' && value !== null) {
+                        return (
+                          <div key={key} style={styles.profileText}>
+                            <strong>{key.toUpperCase()}:</strong>{' '}
+                            {value.url ? (
+                              <a href={value.url} target="_blank" rel="noopener noreferrer" style={{ color: '#ec4899', textDecoration: 'none' }}>
+                                {value.username || value.url}
+                              </a>
+                            ) : (
+                              JSON.stringify(value)
+                            )}
+                          </div>
+                        );
+                      }
+                      // If it's a primitive value, render normally
+                      return (
+                        <p key={key} style={styles.profileText}>
+                          <strong>{key.toUpperCase()}:</strong> {value}
+                        </p>
+                      );
+                    })}
                   </>
                 )}
                 
