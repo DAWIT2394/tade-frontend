@@ -9,7 +9,7 @@ import g5 from '../assets/g5.PNG';
 import g6 from '../assets/g6.JPG';
 import g7 from '../assets/g7.JPG';
 import g8 from '../assets/g8.PNG';
-// import g9 from '../assets/g9.jpg';
+import g9 from '../assets/g9.jpg';
 // import g10 from '../assets/g10.JPG';
 import g11 from '../assets/g11.JPG';
 import g12 from '../assets/g12.JPG';
@@ -25,7 +25,7 @@ const SAMPLE_GALLERY = [
   { id: 6, image: g6, title: 'Fitness Training', category: 'training' },
   { id: 7, image: g7, title: 'Portfolio Session', category: 'photoshoot' },
   { id: 8, image: g8, title: 'Fashion Week Ethiopia', category: 'event' },
-  // { id: 9, image: g9, title: 'Award Ceremony 2024', category: 'graduation' },
+  { id: 9, image: g9, title: 'Award Ceremony 2024', category: 'graduation' },
   // { id: 10, image: g10, title: 'Posing Masterclass', category: 'workshop' },
   { id: 11, image: g11, title: 'Catwalk Practice', category: 'training' },
   { id: 12, image: g12, title: 'Magazine Cover Shoot', category: 'photoshoot' },
