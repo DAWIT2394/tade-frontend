@@ -18,9 +18,9 @@ const Footer = () => {
       icon: "🎵",
       color: "#000000"
     },
-    {
+   {
       name: "Instagram",
-      url: ":https://www.instagram.com/nexus_modeling_school_manag?igsh=bGhwM2FkcG1yODY2",
+      url: "https://www.instagram.com/nexus_modeling_school_manag?igsh=bGhwM2FkcG1yODY2",
       icon: "📷",
       color: "#e4405f"
     },
